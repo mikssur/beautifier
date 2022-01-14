@@ -21,19 +21,3 @@ function Categories(props) {
 }
 
 export default Categories;
-
-// import React from 'react';
-// import Worm from '../Worm/Worm';
-// import { useSelector } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
-
-// // function WormList({ worms }) {
-// function WormList() {
-
-//   const worms = useSelector(state => state.wormsReducer.worms)
-//   return (
-//     <ul>
-//       {worms.length ? worms.map((worm) => <Worm key={uuidv4()} worm={worm} />) : <li>No worms</li>}
-//     </ul>
-//   );
-// }
