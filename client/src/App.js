@@ -1,9 +1,10 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav/Nav.jsx'
 import Home from "./components/Home/Home.jsx";
-import Category from "./components/Category/Category.jsx";
+import Categories from "./components/Categories/Categories.jsx";
 import ServiceList from "./components/ServiceList/ServiceList.jsx"
-import Service from "./components/Service/Service.jsx"
+import MasterList from "./components/MasterList/MasterList.jsx"
+import TimeList from "./components/TimeList/TimeList.jsx"
 import About from "./components/About/About.jsx"
 import Review from "./components/Review/Review.jsx"
 import Admin from "./components/Admin/Admin.jsx"
@@ -21,16 +22,20 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path="/category">
-          <Category />
+        <Route exact path="/categories">
+          <Categories />
         </Route>
 
-        <Route exact path="/category/:categoryname">
+        <Route exact path="/categories/:categoryname">
           <ServiceList />
         </Route>
 
-        <Route exact path="/category/:categoryname/:service">
-          <Service />
+        <Route exact path="/categories/:categoryname/:service">
+          <MasterList />
+        </Route>
+
+        <Route exact path="/categories/:categoryname/:service/:master">
+          <TimeList />
         </Route>
 
         <Route exact path="/about">
