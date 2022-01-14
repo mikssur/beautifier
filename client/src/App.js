@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav/Nav.jsx'
 import Home from "./components/Home/Home.jsx";
-import Category from "./components/Category/Category.jsx";
+import Categories from "./components/Categories/Categories.jsx";
 import ServiceList from "./components/ServiceList/ServiceList.jsx"
 import Service from "./components/Service/Service.jsx"
 import About from "./components/About/About.jsx"
@@ -21,15 +21,15 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path="/category">
-          <Category />
+        <Route exact path="/categories">
+          <Categories />
         </Route>
 
-        <Route exact path="/category/:categoryname">
+        <Route exact path="/categories/:categoryname">
           <ServiceList />
         </Route>
 
-        <Route exact path="/category/:categoryname/:service">
+        <Route exact path="/categories/:categoryname/:service">
           <Service />
         </Route>
 

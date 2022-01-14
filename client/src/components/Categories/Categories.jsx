@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Category(props) {
+function Categories(props) {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Category(props) {
   );
 }
 
-export default Category;
+export default Categories;
