@@ -5,18 +5,18 @@ import { getFetchServicesAC } from '../../redux/actionCreators';
 
 
 function Category({ category }) {
-  const dispatch = useDispatch()
-  return (
-    <>
-      <div>
-        <li>Name: {category.name}, Number: {category.id}</li>
-      </div>
+    const dispatch = useDispatch()
+    return (
+        <>
+            <div>
+                <li>Name: {category.name}, Number: {category.id}</li>
+            </div>
 
-      <Link to={`/categories/${categoryname}`}>
-      <button onClick={() => dispatch(getFetchServicesAC(category.name))} size="small">Выбрать</button>
-      </Link>
-    </>
-  );
+            <Link to={`/categories/${categoryname}`}>
+                <button onClick={() => dispatch(getFetchServicesAC(category.name))} size="small">Выбрать</button>
+            </Link>
+        </>
+    );
 }
 
 export default Category;

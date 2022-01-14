@@ -6,18 +6,18 @@ import Category from '../Category/Category';
 
 function Categories(props) {
 
-  const categories = useSelector(state.catiegoriesReducer.categories)
-  const dispatch = useDispatch()
+    const categories = useSelector(state.catiegoriesReducer.categories)
+    const dispatch = useDispatch()
 
-  useEffect(() => {dispatch(getFetchCategoriesAC())}, [dispatch])
+    useEffect(() => {dispatch(getFetchCategoriesAC())}, [dispatch])
 
-  return (
-    <div>
-      <ul>
-        {categories.length ? categories.map((category) => <Category key={category.id} category={category} />) : <li>No categories</li>}
-      </ul>
-    </div>
-  );
+    return (
+        <div>
+            <ul>
+                {categories.length ? categories.map((category) => <Category key={category.id} category={category} />) : <li>No categories</li>}
+            </ul>
+        </div>
+    );
 }
 
 export default Categories;
