@@ -8,6 +8,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 
+const testRoute = require('./routes/test.route');
 const sessionMiddleware = require('./middlewares/sessions');
 
 const sessionConfig = {
@@ -29,6 +30,8 @@ app.use(morgan('dev'));
 app.use(session(sessionConfig));
 app.use(sessionMiddleware);
 app.use(cors());
+
+app.use('/', testRoute);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
