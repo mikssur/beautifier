@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Category(props) {
+function Categories(props) {
   return (
     <div>
-      
+
     </div>
   );
 }
 
-export default Category;
+export default Categories;
