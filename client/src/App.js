@@ -25,11 +25,11 @@ function App() {
           <Categories />
         </Route>
 
-        <Route exact path="/category/:categoryname">
+        <Route exact path="/categories/:categoryname">
           <ServiceList />
         </Route>
 
-        <Route exact path="/category/:categoryname/:service">
+        <Route exact path="/categories/:categoryname/:service">
           <Service />
         </Route>
 
@@ -50,7 +50,9 @@ function App() {
         </Route>
       </Switch>
 
+
       <Contact />
+
     </BrowserRouter>
   );
 }
