@@ -8,16 +8,13 @@ function Nav(props) {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/category">Category</Link>
+        <Link to="/categories">Categories</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
       </li>
       <li>
         <Link to="/review">Review</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact Us</Link>
       </li>
     </ul>
   );
