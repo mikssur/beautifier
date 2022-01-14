@@ -45,15 +45,12 @@ function App() {
           <Admin />
         </Route>
 
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-
         <Route exact path="/portfolio">
           <Portfolio />
         </Route>
-
       </Switch>
+
+      <Contact />
     </BrowserRouter>
   );
 }
