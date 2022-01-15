@@ -1,23 +1,23 @@
-// import { categoriesAT } from '../actionTypes/categoriesAT';
+import { categoriesAT } from '../actionTypes/categoriesAT';
 
-// // const cats = ''
-// const categoriesInitialState = {
-//   categories: {}
-// }
+// const cats = ''
+const categoriesInitialState = {
+  categories: {}
+}
 
-// const categoriesReducer = (state = categoriesInitialState, action) => {
+export const categoriesReducer = (state = categoriesInitialState, action) => {
 
-//   switch (action.type) {
-//     case categoriesAT.INIT_CATEGORIES:
-//       return { ...state, categories: categories };
+  switch (action.type) {
+    case 'INIT_CATEGORIES':
+      const categories = action.payload
+      console.log('INIT CATEGORIES WORK', categories)
+      return { ...state, categories: categories };
 
-//     // case categoriesAT.INIT_CATEGORIES:
-//     //   return { ...state, categories: categories };
+    // case categoriesAT.INIT_CATEGORIES:
+    //   return { ...state, categories: categories };
 
-//     default:
-//       return state
-//   }
+    default:
+      return state
+  }
 
-// }
-
-// export default categoriesReducer
+}

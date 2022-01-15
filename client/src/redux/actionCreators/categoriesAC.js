@@ -13,9 +13,9 @@ export const categoriesInitAC = (payload) => {
 //     payload
 //   }
 // }
-// export const fetchChooseCategoryAC = (payload) => {
-//   return {
-//     type: categoriesAT.GET_FETCH_CHOOSE_CATEGORY,
-//     payload
-//   }
-// }
+export const getFetchCategoriesAC = (payload) => {
+  return {
+    type: categoriesAT.GET_FETCH_CATEGORIES,
+    payload
+  }
+}
