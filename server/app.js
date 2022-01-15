@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT ?? 3000;
 
 const testRoute = require('./routes/test.route');
+const categoriesRoute = require('./routes/categories.route');
 const sessionMiddleware = require('./middlewares/sessions');
 
 const sessionConfig = {
