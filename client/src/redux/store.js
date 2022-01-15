@@ -15,7 +15,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 
 // sagaMiddleware.run(myWatcher)
-sagaMiddleware.run(portfolioWatcher)
+// sagaMiddleware.run(portfolioWatcher)
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 

@@ -42,7 +42,7 @@ function App() {
           <About />
         </Route>
 
-        <Route exact path="/review">
+        <Route exact path="/reviews">
           <Review />
         </Route>
 
