@@ -1,13 +1,15 @@
 import React from 'react';
 
-function ReviewCard({name, text, isValid}) {
+function ReviewCard({ name, text, isValid }) {
   return (
-    
-    <li>
-      <p>{name}</p>
-      <p>{text}</p>
-
-    </li>
+    <>
+      {isValid ?
+        <li>
+          <p>{name}</p>
+          <p>{text}</p>
+        </li> :
+        null}
+    </>
   );
 }
 

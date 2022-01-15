@@ -16,6 +16,7 @@ import { portfolioWatcher } from './sagas/portfolioSaga'
 const sagaMiddleware = createSagaMiddleware()
 
 // sagaMiddleware.run(myWatcher)
+// sagaMiddleware.run(portfolioWatcher)
 
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));

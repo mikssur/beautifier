@@ -10,10 +10,8 @@ const app = express();
 const PORT = process.env.PORT ?? 5000;
 
 
-const testRoute = require('./routes/test.route');
-
+const reviewsRoute = require('./routes/reviews.route');
 const categoriesRoute = require('./routes/categories.route');
-
 const portfolioRouter = require('./routes/portfolio.router');
 
 const sessionMiddleware = require('./middlewares/sessions');
@@ -38,7 +36,7 @@ app.use(session(sessionConfig));
 app.use(sessionMiddleware);
 app.use(cors());
 
-app.use('/', testRoute);
+app.use('/reviews', reviewsRoute);
 app.use('/portfolio', portfolioRouter);
 
 app.listen(PORT, () => {
