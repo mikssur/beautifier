@@ -15,6 +15,6 @@ function* fetchMasters() {
 }
 
 
-export function* myWatcher() {
+export function* masterWatcher() {
   yield takeEvery("MASTERS_FETCH", fetchMasters);
 }
