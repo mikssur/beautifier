@@ -4,31 +4,33 @@ import { useDispatch, useSelector } from 'react-redux';
 function Portfolio(props) {
 
   const dispatch = useDispatch()
-  const { masters } = useSelector(state => state.masterReducer)
+  const { masters } = useSelector(state => state.portfolioReducer)
 
+  console.log('portfolio.jsx', masters)
 
   useEffect(() => {
-    dispatch({ type: 'MASTERS_FETCH' })
+    dispatch({ type: 'PORTFOLIO_FETCH' })
     console.log(123);
   }, [dispatch])
 
   return (
+
     <>
-      {
-        masters.map(el => {
-          <div className='master'>
-            <div>
-              <p>{el.name}</p>
-              <p>{el.categoryName}</p>
-
-              <button>Познакомиться</button>
+      <div>
+        {masters.map(el => {
+          return <>
+            <div key={el.id}>
+              <div>
+                <h3>{el.name}</h3>
+                <p >{el.category}</p>
+                <button>Познакомиться</button>
+              </div>
             </div>
-            <div className='work'>
 
-            </div>
-          </div>
-        })
-      }
+          </>
+        })}</div>
+
+
     </>
   );
 }

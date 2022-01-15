@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Student } = require('../db/models');
+const { Master } = require('../db/models');
 
 router.route('/')
   .get((req, res) => {
-    Student.findAll()
+    Master.findAll()
       .then((allMasters) => res.json(allMasters))
       .catch((error) => console.log(error));
   });

@@ -1,9 +1,9 @@
 
 const initialState = { masters: [] }
 
-export const masterReducer = (state = initialState, action) => {
+export const portfolioReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INIT_MASTERS': {
+    case 'INIT_PORTFOLIO': {
 
       return { ...state, masters: action.payload }
     }
@@ -13,4 +13,4 @@ export const masterReducer = (state = initialState, action) => {
   }
 };
 
-export default masterReducer;
+export default portfolioReducer;

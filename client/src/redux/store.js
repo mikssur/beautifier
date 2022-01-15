@@ -1,16 +1,16 @@
-import { createStore, } from 'redux';
-import { composeWithDevTools, applyMiddleware } from 'redux-devtools-extension';
+
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './reducers/rootReducer';
 import createSagaMiddleware from 'redux-saga'
-import { myWatcher } from './sagas/saga'
-import { masterWatcher } from './sagas/masterSaga'
+// import { myWatcher } from './sagas/saga'
+import { portfolioWatcher } from './sagas/portfolioSaga'
 
 
 const sagaMiddleware = createSagaMiddleware()
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
-sagaMiddleware.run(myWatcher)
-sagaMiddleware.run(masterWatcher)
+// sagaMiddleware.run(myWatcher)
+sagaMiddleware.run(portfolioWatcher)
 
-export default store;

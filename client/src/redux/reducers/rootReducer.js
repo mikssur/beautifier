@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
 import { appReducer } from './appReducer';
-import { masterReducer } from './masterReducer';
+import { portfolioReducer } from './portfolioReducer';
+// import { categoriesReducer } from './categoriesReducer';
+
 
 
 export const rootReducer = combineReducers({
   appReducer,
-  masterReducer
+  portfolioReducer,
+  // categoriesReducer,
+
 });

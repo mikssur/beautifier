@@ -3,7 +3,8 @@ import Nav from './components/Nav/Nav.jsx'
 import Home from "./components/Home/Home.jsx";
 import Categories from "./components/Categories/Categories.jsx";
 import ServiceList from "./components/ServiceList/ServiceList.jsx"
-import Service from "./components/Service/Service.jsx"
+import MasterList from "./components/MasterList/MasterList.jsx"
+import TimeList from "./components/TimeList/TimeList.jsx"
 import About from "./components/About/About.jsx"
 import Review from "./components/Review/Review.jsx"
 import Admin from "./components/Admin/Admin.jsx"
@@ -30,7 +31,11 @@ function App() {
         </Route>
 
         <Route exact path="/categories/:categoryname/:service">
-          <Service />
+          <MasterList />
+        </Route>
+
+        <Route exact path="/categories/:categoryname/:service/:master">
+          <TimeList />
         </Route>
 
         <Route exact path="/about">
