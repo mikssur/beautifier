@@ -5,7 +5,7 @@ import { rootReducer } from './reducers/rootReducer';
 
 
 
-// import {mySaga} from '../redux/sagas/sagas';
+import { mySaga } from '../redux/sagas/sagas';
 // sagaMiddleware.run(mySaga)
 
 import createSagaMiddleware from 'redux-saga'
