@@ -17,6 +17,9 @@ function Nav(props) {
         <Link to="/review">Review</Link>
       </li>
       <li>
+        <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
         <Link to="/admincabinet">Кабинет</Link>
       </li>
     </ul>
