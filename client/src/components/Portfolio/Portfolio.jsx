@@ -19,6 +19,7 @@ function Portfolio(props) {
           <div className='master'>
             <div>
               <p>{el.name}</p>
+              <p>{el.categoryName}</p>
 
               <button>Познакомиться</button>
             </div>

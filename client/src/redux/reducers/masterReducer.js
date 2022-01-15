@@ -1,14 +1,11 @@
 
-
-const initialState = {}
+const initialState = { masters: [] }
 
 export const masterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'MASTERS_FETCH': {
+    case 'INIT_MASTERS': {
 
-      return {
-
-      };
+      return { ...state, masters: action.payload }
     }
 
     default:
