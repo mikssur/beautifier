@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getFetchMastersAC } from '../../redux/actionCreators/mastersAC';
+// import { getFetchMastersAC } from '../../redux/actionCreators/mastersAC';
 
 
 function Service({service}) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   return (
     <>
       <div>
@@ -13,7 +13,7 @@ function Service({service}) {
       </div>
 
       <Link to={`/categories/categoryname/${service}`}>
-      <button onClick={() => dispatch(getFetchMastersAC(service.name))} size="small">Выбрать услугу</button>
+      {/* <button onClick={() => dispatch(getFetchMastersAC(service.name))} size="small">Выбрать услугу</button> */}
       </Link>
     </>
   );

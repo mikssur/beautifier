@@ -1,20 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getFetchServicesAC } from '../../redux/actionCreators';
+// import { useDispatch } from 'react-redux';
+// import { Link } from 'react-router-dom';
+// import { getFetchServicesAC } from '../../redux/actionCreators';
 
 
 function Category({ category }) {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     return (
         <>
-            <div>
+            {/* <div>
                 <li>Name: {category.name}, Number: {category.id}</li>
-            </div>
+            </div> */}
 
-            <Link to={`/categories/${categoryname}`}>
+            {/* <Link to={`/categories/${categoryname}`}>
                 <button onClick={() => dispatch(getFetchServicesAC(category.name))} size="small">Выбрать</button>
-            </Link>
+            </Link> */}
         </>
     );
 }

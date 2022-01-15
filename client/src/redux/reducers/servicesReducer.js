@@ -1,22 +1,22 @@
-import { servicesAT } from '../actionTypes/servicesAT';
+// import { servicesAT } from '../actionTypes/servicesAT';
 
-// const cats = ''
-const servicesInitialState = {
-  services: {}
-}
+// // const cats = ''
+// const servicesInitialState = {
+//   services: {}
+// }
 
-const servicesReducer = (state = servicesInitialState, action) => {
+// const servicesReducer = (state = servicesInitialState, action) => {
 
-  switch (action.type) {
-    case servicesAT.INIT_SERVICES:
-      const services = action.payload.services
-      const categoryname = action.payload.categoryname
-      return { ...state, services: services };
+//   switch (action.type) {
+//     case servicesAT.INIT_SERVICES:
+//       const services = action.payload.services
+//       const categoryname = action.payload.categoryname
+//       return { ...state, services: services };
 
-    default:
-      return state
-  }
+//     default:
+//       return state
+//   }
 
-}
+// }
 
-export default servicesReducer
+// export default servicesReducer
