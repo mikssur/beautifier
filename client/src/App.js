@@ -10,6 +10,7 @@ import Review from "./components/Review/Review.jsx"
 import Admin from "./components/Admin/Admin.jsx"
 import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
+import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 
 function App() {
   return (
@@ -48,6 +49,10 @@ function App() {
 
         <Route exact path="/admin">
           <Admin />
+        </Route>
+
+        <Route exact path="/admincabinet">
+          <AdminCabinet />
         </Route>
 
         <Route exact path="/portfolio">
