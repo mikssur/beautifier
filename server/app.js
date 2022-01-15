@@ -6,7 +6,9 @@ const Filestore = require('session-file-store')(session);
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT ?? 3001;
+
+const PORT = process.env.PORT ?? 5000;
+
 
 const testRoute = require('./routes/test.route');
 const portfolioRouter = require('./routes/portfolio.router');
