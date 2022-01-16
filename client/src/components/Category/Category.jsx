@@ -1,12 +1,23 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// // import { getFetchServicesAC } from '../../redux/actionCreators';
+import { gettFetchServicesAC } from '../../redux/actionCreators/servicesAC';
 
 
 function Category({ category }) {
   const dispatch = useDispatch()
-  const categoryname = category
+  const categoryname = category.name
+  const id = category.id
+  console.log(id, 'ETO IDIDIDIDIDIDIDIDIDIIDIDD')
+
+  // function getGettFetchServices(id) {
+  //   return {
+  //     type: 'GET_FETCH_SERVICES',
+  //     payload: {
+  //       id,
+  //     },
+  //   };
+  // }
   
   return (
     <>
@@ -14,9 +25,9 @@ function Category({ category }) {
         <li>Name: {categoryname}</li>
       </div>
 
-      {/* <Link to={`/categories/${categoryname}`}>
-        <button onClick={() => dispatch('GET_FETCH_SERVICES'(category.name))} size="small">Выбрать</button>
-      </Link> */}
+      <Link to={`/categories/${categoryname}`}>
+        <button onClick={() => dispatch({type: 'GET_FETCH_SERVICES', payload: {id}})} size="small">Выбрать</button>
+      </Link>
     </>
   );
 }

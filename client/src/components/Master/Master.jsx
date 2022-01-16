@@ -6,13 +6,15 @@ import { Link } from 'react-router-dom';
 
 function Master({master}) {
   const dispatch = useDispatch()
+  const mastername = master.name
+  const id = master.id
   return (
     <>
       <div>
-        <li>Name: {master.name}, Number: {master.id}</li>
+        <li>Name: {master.name}, Price: {master.category}</li>
       </div>
 
-      <Link to={`/categories/categoryname/service/${master}`}>
+      <Link to={`/categories/categoryname/service/${mastername}`}>
       <button size="small">Выбрать время</button>
       </Link>
     </>

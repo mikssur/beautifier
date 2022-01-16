@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Portfolio(props) {
 
   const dispatch = useDispatch()
   const { masters } = useSelector(state => state.portfolioReducer)
 
-  console.log('portfolio.jsx', masters)
-
   useEffect(() => {
     dispatch({ type: 'PORTFOLIO_FETCH' })
-    console.log(123);
   }, [dispatch])
 
   return (
@@ -23,7 +21,7 @@ function Portfolio(props) {
               <div>
                 <h3>{el.name}</h3>
                 <p >{el.category}</p>
-                <button>Познакомиться</button>
+                <Link to={{ pathname: `/portfolio/${el.id}` }}>Познакомиться</Link>
               </div>
             </div>
 
