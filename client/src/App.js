@@ -8,14 +8,14 @@ import MasterList from "./components/MasterList/MasterList.jsx"
 import TimeList from "./components/TimeList/TimeList.jsx"
 import About from "./components/About/About.jsx"
 import Review from "./components/Review/Review.jsx"
-import Admin from "./components/Admin/Admin.jsx"
+import Admin from "./components/AdminForm/AdminForm.jsx"
 import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
+import AdminRegistration from './components/AdminRegistration/AdminRegistration.jsx';
 import Cabinet from "./components/Cabinet/Cabinet.jsx";
 import SignIn from "./components/SignIn/SignIn";
-
 
 
 function App() {
@@ -57,8 +57,12 @@ function App() {
           <Review />
         </Route>
 
-        <Route exact path="/admin">
+        <Route exact path="/adminform">
           <Admin />
+        </Route>
+
+        <Route exact path="/adminregistration">
+          <AdminRegistration />
         </Route>
 
         <Route exact path="/admincabinet">
