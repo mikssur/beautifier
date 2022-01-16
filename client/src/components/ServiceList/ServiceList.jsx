@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-//import { fetchCategoriesAC } from '../../redux/actionCreators/categoriesAC';
+// // import { fetchCategoriesAC } from '../../redux/actionCreators/categoriesAC';
 // import Service from '../Sevice/Service';
 // import { useDispatch } from 'react-redux';
 
@@ -11,7 +11,7 @@ function ServiceList(props) {
   // const dispatch = useDispatch()
   const { categoryname } = useParams()
 
-  //useEffect(() => {dispatch(fetchServicesAC())}, [dispatch])
+  // //useEffect(() => {dispatch(fetchServicesAC())}, [dispatch])
 
   return (
     <div>

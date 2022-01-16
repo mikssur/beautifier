@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav/Nav.jsx'
 import Home from "./components/Home/Home.jsx";
@@ -11,6 +12,8 @@ import Admin from "./components/Admin/Admin.jsx"
 import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
+import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
+
 
 function App() {
   return (
@@ -43,12 +46,16 @@ function App() {
           <About />
         </Route>
 
-        <Route exact path="/review">
+        <Route exact path="/reviews">
           <Review />
         </Route>
 
         <Route exact path="/admin">
           <Admin />
+        </Route>
+
+        <Route exact path="/admincabinet">
+          <AdminCabinet />
         </Route>
 
         <Route exact path="/portfolio">
