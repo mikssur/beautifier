@@ -11,6 +11,9 @@ import Review from "./components/Review/Review.jsx"
 import Admin from "./components/Admin/Admin.jsx"
 import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
+import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
+import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
+
 
 function App() {
   return (
@@ -43,7 +46,7 @@ function App() {
           <About />
         </Route>
 
-        <Route exact path="/review">
+        <Route exact path="/reviews">
           <Review />
         </Route>
 
@@ -51,8 +54,16 @@ function App() {
           <Admin />
         </Route>
 
+        <Route exact path="/admincabinet">
+          <AdminCabinet />
+        </Route>
+
         <Route exact path="/portfolio">
           <Portfolio />
+        </Route>
+
+        <Route exact path="/portfolio/:masterId">
+          <PortfolioCard />
         </Route>
       </Switch>
 

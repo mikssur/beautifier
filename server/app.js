@@ -11,13 +11,17 @@ const PORT = process.env.PORT ?? 3001;
 
 const testRoute = require('./routes/test.route');
 
-const categoriesRoute = require('./routes/categories.route');
+const reviewsRoute = require('./routes/reviews.route');
 
+const categoriesRoute = require('./routes/categories.route');
 const portfolioRouter = require('./routes/portfolio.router');
+const portfolioCRouter = require('./routes/portfolioC.router');
 
 const mastersRouter = require('./routes/masters.router');
 
 const sessionMiddleware = require('./middlewares/sessions');
+
+const adminReservationRouter = require('./routes/adminReservations.route');
 
 const sessionConfig = {
   store: new Filestore(),
@@ -39,10 +43,12 @@ app.use(session(sessionConfig));
 app.use(sessionMiddleware);
 app.use(cors());
 
-app.use('/', testRoute);
+app.use('/reviews', reviewsRoute);
 app.use('/portfolio', portfolioRouter);
 app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
+app.use('/portfolio', portfolioCRouter);
+app.use('/admincabinet', adminReservationRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

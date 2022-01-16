@@ -14,10 +14,13 @@ function Nav(props) {
         <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/review">Review</Link>
+        <Link to="/reviews">Review</Link>
       </li>
       <li>
         <Link to="/portfolio">Portfolio</Link>
+      </li>
+      <li>
+        <Link to="/admincabinet">Кабинет</Link>
       </li>
     </ul>
   );
