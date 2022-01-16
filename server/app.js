@@ -1,8 +1,10 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const Filestore = require('session-file-store')(session);
+
 const cors = require('cors');
 
 const app = express();
@@ -22,6 +24,9 @@ const mastersRouter = require('./routes/masters.router');
 const sessionMiddleware = require('./middlewares/sessions');
 
 const adminReservationRouter = require('./routes/adminReservations.route');
+
+const clientRouter = require('./routes/client.route');
+const signinRouter = require('./routes/signin.route');
 
 const sessionConfig = {
   store: new Filestore(),
@@ -49,6 +54,8 @@ app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
+app.use('/cabinet', clientRouter);
+app.use('/signin', signinRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
