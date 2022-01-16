@@ -13,6 +13,9 @@ import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
+import Cabinet from "./components/Cabinet/Cabinet.jsx";
+import SignIn from "./components/SignIn/SignIn";
+
 
 
 function App() {
@@ -60,6 +63,14 @@ function App() {
 
         <Route exact path="/admincabinet">
           <AdminCabinet />
+        </Route>
+
+        <Route exact path="/cabinet">
+          <Cabinet />
+        </Route>
+
+        <Route exact path="/signin">
+          <SignIn />
         </Route>
 
         <Route exact path="/portfolio">

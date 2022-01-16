@@ -22,6 +22,14 @@ function Nav(props) {
       <li>
         <Link to="/admincabinet">Кабинет</Link>
       </li>
+
+      <li>
+        <Link to="/cabinet">Cabinet</Link>
+      </li>
+
+      <li>
+        <Link to="/signin">Sign In</Link>
+      </li>
     </ul>
   );
 }
