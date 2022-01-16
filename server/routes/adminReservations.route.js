@@ -7,7 +7,7 @@ router.route('/')
     const reservations = await Reservation.findAll();
     console.log(reservations);
 
-    //res.json(reservations);
+    res.json(reservations);
   });
 
 module.exports = router;
