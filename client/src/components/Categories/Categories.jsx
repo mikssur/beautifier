@@ -8,7 +8,7 @@ import Category from '../Category/Category';
 function Categories(props) {
       // const categories = [{parik: 'parik', id: '1'}, {manik: 'manik', id: '2'}, {strig: 'strig', id: '3'}]
     const categories = useSelector((state) => state.categoriesReducer.categories)
-    console.log(categories[0] );
+    console.log(categories[0]);
     const dispatch = useDispatch()
 
     useEffect(() => {dispatch({ type: 'GET_FETCH_CATEGORIES' })}, [dispatch])

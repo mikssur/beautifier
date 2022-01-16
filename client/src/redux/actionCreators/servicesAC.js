@@ -6,7 +6,7 @@ export const servicesInitAC = (payload) => {
     payload
   }
 }
-export const getFetchServicesAC = (payload) => {
+export const gettFetchServicesAC = (payload) => {
   return {
     type: servicesAT.GET_FETCH_SERVICES,
     payload

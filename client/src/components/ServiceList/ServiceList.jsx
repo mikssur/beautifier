@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { v4 as uuidv4 } from 'uuid';
 // // import { fetchCategoriesAC } from '../../redux/actionCreators/categoriesAC';
-// import Service from '../Sevice/Service';
-// import { useDispatch } from 'react-redux';
+import Service from '../Service/Service';
+import { useDispatch } from 'react-redux';
 
 function ServiceList(props) {
 
-  // const services = useSelector(state => state.servicesReducer.services)
-  // const dispatch = useDispatch()
+  const services = useSelector(state => state.servicesReducer.services)
+  console.log(services, 'SER----VI----CES')
+  const dispatch = useDispatch()
   const { categoryname } = useParams()
 
   // //useEffect(() => {dispatch(fetchServicesAC())}, [dispatch])
@@ -16,9 +18,9 @@ function ServiceList(props) {
   return (
     <div>
       <h2>{categoryname}</h2>
-      {/* <ul>
-        {services.length ? services.map((service) => <Service key={service.id} service={service} />) : <li>No services</li>}
-      </ul> */}
+      <ul>
+        {services.length ? services.map((service) => <Service key={uuidv4()} service={service} />) : <li>No services</li>}
+      </ul>
     </div>
   );
 }
