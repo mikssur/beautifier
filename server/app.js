@@ -10,6 +10,7 @@ const PORT = process.env.PORT ?? 3001;
 
 const testRoute = require('./routes/test.route');
 const portfolioRouter = require('./routes/portfolio.router');
+const portfolioCRouter = require('./routes/portfolioC.router');
 const sessionMiddleware = require('./middlewares/sessions');
 
 const sessionConfig = {
@@ -34,6 +35,7 @@ app.use(cors());
 
 app.use('/', testRoute);
 app.use('/portfolio', portfolioRouter);
+app.use('/portfolio', portfolioCRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
