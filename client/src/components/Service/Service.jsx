@@ -9,14 +9,16 @@ function Service({service}) {
   console.log('SERVICE RENDER', service)
   const servicename = service.name
   const id = service.id
+  const currentURL = window.location.pathname
+  console.log('URLURLURLURL V KOMPONENTE SERVICE', currentURL)
   return (
     <>
       <div>
         <li>Name: {service.name} Price: {service.price}</li>
       </div>
 
-      <Link to={`/categories/categoryname/${servicename}`}>
-      {/* <button onClick={() => dispatch({type: 'GET_FETCH_MASTERS', payload: {id}})} size="small">Посмотреть мастеров</button> */}
+      <Link to={`${currentURL}/${servicename}`}>
+      <button onClick={() => dispatch({type: 'GET_FETCH_MASTERS', payload: {id}})} size="small">Посмотреть мастеров</button>
       </Link>
     </>
   );
