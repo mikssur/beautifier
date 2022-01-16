@@ -9,14 +9,16 @@ import Master from '../Master/Master';
 function MasterList(props) {
 
   const masters = useSelector(state => state.mastersReducer.masters)
+  console.log('MASTERS V KOMPONENTEEEEEEEEEEEEEEEEEE', masters)
   const dispatch = useDispatch()
-  const { servicename } = useParams()
+  const { service } = useParams()
+  console.log('NAZVANIJA YSLYGI V SPISKE MASTEROV', service)
 
   //useEffect(() => {dispatch(fetchServicesAC())}, [dispatch])
 
   return (
     <div>
-      <h2>{servicename}</h2>
+      <h2>{service}</h2>
       <ul>
         {masters.length ? masters.map((master) => <Master key={master.id} master={master} />) : <li>No masters</li>}
       </ul>

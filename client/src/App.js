@@ -14,9 +14,15 @@ import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 import AdminRegistration from './components/AdminRegistration/AdminRegistration.jsx';
+import Cabinet from "./components/Cabinet/Cabinet.jsx";
+import SignIn from "./components/SignIn/SignIn";
 
 
 function App() {
+
+  // let currentURL = window.location.pathname
+  // console.log('DOLBANNIJ URLLLLLLLLLLLLLLLLLL', currentURL)
+
   return (
     <BrowserRouter>
       <Nav />
@@ -32,7 +38,7 @@ function App() {
         </Route>
 
         <Route exact path="/categories/:categoryname">
-          <ServiceList />
+            <ServiceList />
         </Route>
 
         <Route exact path="/categories/:categoryname/:service">
@@ -61,6 +67,14 @@ function App() {
 
         <Route exact path="/admincabinet">
           <AdminCabinet />
+        </Route>
+
+        <Route exact path="/cabinet">
+          <Cabinet />
+        </Route>
+
+        <Route exact path="/signin">
+          <SignIn />
         </Route>
 
         <Route exact path="/portfolio">
