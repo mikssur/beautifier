@@ -1,12 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux'
 
-function AddReviewForm(props) {
+function AddReviewForm({ setNewReview }) {
 
   const [name, setName] = useState('');
   const [text, setText] = useState('');
-
-  const dispatch = useDispatch()
 
   const nameRef = useRef()
   const textRef = useRef()
@@ -30,9 +28,7 @@ function AddReviewForm(props) {
         isValid: true,
       })
     })
-      // .then(res => res.json())
-      // .then(data => console.log(data))
-
+    setNewReview(false)
     setName('')
     setText('')
   }

@@ -8,7 +8,8 @@ import ReviewCard from './ReviewCard';
 
 function Review(props) {
 
-  const [newReview, setNewReview] = useState(false)
+  const [newReview, setNewReview] = useState(false);
+  const [newDate, setNewDate] = useState('')
 
   const dispatch = useDispatch()
   const { reviews } = useSelector(state => state.reviewsReducer)
@@ -21,14 +22,12 @@ function Review(props) {
     })();
   }, [])
 
-
   return (
     <div>
       <ul>
         {reviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} isValid={review.isValid} />)}
       </ul>
-      {newReview ? <AddReviewForm/> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>}
-      
+      {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>}
     </div>
 
   );
