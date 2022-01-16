@@ -1,19 +1,22 @@
 import React from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import { getFetchMastersAC } from '../../redux/actionCreators/mastersAC';
 
 
 function Service({service}) {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  console.log('SERVICE RENDER', service)
+  const servicename = service.name
+  const id = service.id
   return (
     <>
       <div>
-        <li>Name: {service.name}, Number: {service.id}</li>
+        <li>Name: {service.name} Price: {service.price}</li>
       </div>
 
-      <Link to={`/categories/categoryname/${service}`}>
-      {/* <button onClick={() => dispatch(getFetchMastersAC(service.name))} size="small">Выбрать услугу</button> */}
+      <Link to={`/categories/categoryname/${servicename}`}>
+      {/* <button onClick={() => dispatch({type: 'GET_FETCH_MASTERS', payload: {id}})} size="small">Посмотреть мастеров</button> */}
       </Link>
     </>
   );
