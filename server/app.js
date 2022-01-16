@@ -1,8 +1,10 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const Filestore = require('session-file-store')(session);
+
 const cors = require('cors');
 
 const app = express();
@@ -12,13 +14,14 @@ const PORT = process.env.PORT ?? 3001;
 const testRoute = require('./routes/test.route');
 
 const reviewsRoute = require('./routes/reviews.route');
-
 const categoriesRoute = require('./routes/categories.route');
 const portfolioRouter = require('./routes/portfolio.router');
 const portfolioCRouter = require('./routes/portfolioC.router');
 const adminReservationRouter = require('./routes/adminReservations.route');
 const mastersRouter = require('./routes/masters.router');
 const adminRegistrationRouter = require('./routes/adminRegistration.route');
+const clientRouter = require('./routes/client.route');
+const signinRouter = require('./routes/signin.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -48,6 +51,8 @@ app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
+app.use('/cabinet', clientRouter);
+app.use('/signin', signinRouter);
 app.use('/adminregistration', adminRegistrationRouter);
 
 app.listen(PORT, () => {
