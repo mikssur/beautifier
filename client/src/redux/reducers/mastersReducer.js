@@ -11,7 +11,7 @@ const mastersReducer = (state = mastersInitialState, action) => {
     case mastersAT.INIT_MASTERS:
       const masters = action.payload.masters
       console.log('!!!!!!!!!!!!MASTERS V REDJUSEREEE!!!!!!!!!!', masters)
-      return { ...state, services: masters };
+      return { ...state, masters: masters };
 
     default:
       return state

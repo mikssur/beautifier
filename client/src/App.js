@@ -16,6 +16,10 @@ import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 
 
 function App() {
+
+  // let currentURL = window.location.pathname
+  // console.log('DOLBANNIJ URLLLLLLLLLLLLLLLLLL', currentURL)
+
   return (
     <BrowserRouter>
       <Nav />
@@ -31,7 +35,7 @@ function App() {
         </Route>
 
         <Route exact path="/categories/:categoryname">
-          <ServiceList />
+            <ServiceList />
         </Route>
 
         <Route exact path="/categories/:categoryname/:service">
