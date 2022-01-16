@@ -11,6 +11,7 @@ import { mySaga } from '../redux/sagas/sagas';
 import createSagaMiddleware from 'redux-saga'
 // import { myWatcher } from './sagas/saga'
 import { portfolioWatcher } from './sagas/portfolioSaga'
+import { reservationWatcher } from './sagas/reservationsSaga'
 
 
 const sagaMiddleware = createSagaMiddleware()
@@ -19,5 +20,6 @@ const sagaMiddleware = createSagaMiddleware()
 
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+sagaMiddleware.run(reservationWatcher)
 sagaMiddleware.run(portfolioWatcher)
 sagaMiddleware.run(mySaga)

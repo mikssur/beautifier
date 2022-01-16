@@ -8,11 +8,11 @@ function Reservations(props) {
     <div>
       {reservations.map(el => {
           return <>
-              <div>
-                <div>{el.clientName}</div>
-                <div>{el.clientNunmber}</div>
-                <div>{el.master}</div>
-                <div>{el.category}</div>
+              <div key={el.clientName}>
+                Имя: <div>{el.clientName}</div>
+                Номер телефона: <div>{el.clientNumber}</div>
+                Мастер: <div>{el.masterId}</div>
+                Категория: <div>{el.serviceId}</div>
                 <button>Редактировать</button>
                 <button>Удалить</button>
               </div>
