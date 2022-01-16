@@ -9,11 +9,11 @@ import { portfolioCReducer } from './portfolioCReducer';
 import reviewsReducer from './reviewsReducer';
 import servicesReducer from './servicesReducer';
 import mastersReducer from './mastersReducer';
-
+import adminRegistrationReducer from './adminRegistrationReducer';
 import reservationReducer from './reservationReducer'
 
 export const rootReducer = combineReducers({
   appReducer, reviewsReducer,
-  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer,
+  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, adminRegistrationReducer,
   // categoriesReducer,
 });
