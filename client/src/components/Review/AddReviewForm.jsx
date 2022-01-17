@@ -18,7 +18,7 @@ function AddReviewForm({ setNewReview }) {
   function addReview(event) {
     event.preventDefault()
 
-    fetch('http://localhost:3001/reviews', {
+    fetch('/reviews', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

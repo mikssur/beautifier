@@ -10,13 +10,14 @@ function Master({master}) {
   const id = master.id
   return (
     <>
+    
       <div>
-        <li>Name: {master.name}, Price: {master.category}</li>
+        <li>Name: {master.name}, Category: {master.category}</li>
       </div>
 
-      <Link to={`/categories/categoryname/service/${mastername}`}>
+      {/* <Link to={`/categories/categoryname/service/${mastername}`}>
       <button size="small">Выбрать время</button>
-      </Link>
+      </Link> */}
     </>
   );
 }
