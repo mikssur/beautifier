@@ -6,7 +6,6 @@ function Home(props) {
       <img src="#" />
       <p>ДЛЯ ТЕХ, КТО ИЗ ЛУЧШЕГО ВЫБИРАЕТ ИСКЛЮЧИТЕЛЬНОЕ!</p>
       <p>BEAUTIFIER АДРЕС: КУЗНЕЦОВЫЙ ПЕРЕУЛОК 5/2</p>
-      <button>Записаться</button>
       <Categories />
     </div>
   );

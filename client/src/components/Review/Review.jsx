@@ -16,7 +16,7 @@ function Review(props) {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`http://localhost:5000/reviews`)
+      const response = await fetch(`http://localhost:3001/reviews`)
       const res = await response.json();
       dispatch(initReviewsAC({ res }))
     })();

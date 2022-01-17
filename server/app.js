@@ -16,6 +16,9 @@ const reviewsRoute = require('./routes/reviews.route');
 const categoriesRoute = require('./routes/categories.route');
 const portfolioRouter = require('./routes/portfolio.router');
 const portfolioCRouter = require('./routes/portfolioC.router');
+const servicesReserv = require('./routes/servicesReserv.route');
+const mastersReserv = require('./routes/mastersReserv.router');
+const createReserv = require('./routes/createReserv.router');
 
 const mastersRouter = require('./routes/masters.router');
 
@@ -49,6 +52,9 @@ app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
+app.use('/servicesreserv', servicesReserv);
+app.use('/mastersreserv', mastersReserv);
+app.use('/createreserv', createReserv);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

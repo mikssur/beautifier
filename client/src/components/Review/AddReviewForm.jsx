@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux'
 
 function AddReviewForm({ setNewReview }) {
 
@@ -19,7 +18,7 @@ function AddReviewForm({ setNewReview }) {
   function addReview(event) {
     event.preventDefault()
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('http://localhost:3001/reviews', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

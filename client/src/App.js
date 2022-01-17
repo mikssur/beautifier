@@ -13,6 +13,7 @@ import Contact from "./components/Contact/Contact.jsx"
 import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
+import ReservationCategories from './components/ReservationCAtegories/ReservationCategories.jsx';
 
 
 function App() {
@@ -64,6 +65,9 @@ function App() {
 
         <Route exact path="/portfolio/:masterId">
           <PortfolioCard />
+        </Route>
+        <Route exact path="/reservation">
+          <ReservationCategories />
         </Route>
       </Switch>
 
