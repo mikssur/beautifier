@@ -14,21 +14,18 @@ const PORT = process.env.PORT ?? 3001;
 const testRoute = require('./routes/test.route');
 
 const reviewsRoute = require('./routes/reviews.route');
-
 const categoriesRoute = require('./routes/categories.route');
 const portfolioRouter = require('./routes/portfolio.router');
 const portfolioCRouter = require('./routes/portfolioC.router');
-
-const mastersRouter = require('./routes/masters.router');
-
-const sessionMiddleware = require('./middlewares/sessions');
-
 const adminReservationRouter = require('./routes/adminReservations.route');
-
+const mastersRouter = require('./routes/masters.router');
+const adminRegistrationRouter = require('./routes/adminRegistration.route');
 const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
 const sessionRouter = require('./routes/session.route');
 const signoutRouter = require('./routes/signout.route');
+
+const sessionMiddleware = require('./middlewares/sessions');
 
 const sessionConfig = {
   store: new Filestore(),
@@ -62,6 +59,7 @@ app.use('/cabinet', clientRouter);
 app.use('/signin', signinRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);
+app.use('/adminregistration', adminRegistrationRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
