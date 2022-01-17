@@ -11,8 +11,8 @@ function Nav(props) {
     dispatch({ type: 'SESSION_FETCH' })
   }, [dispatch])
 
-  console.log(session.authClient, 'client session')
-
+ // console.log(session.authClient, 'client session')
+  console.log(session);
   async function signOut() {
     try {
       await fetch('/signout');
@@ -44,7 +44,9 @@ function Nav(props) {
         <li>
           <Link to="/admincabinet">Кабинет</Link>
         </li> : ''}
-
+      <li>
+          <Link to="/reservation">Записаться</Link>
+      </li>
       {session.authClient ?
         <> <li>
           <Link to='/profile'> Cabinet</Link>

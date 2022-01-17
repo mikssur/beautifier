@@ -3,7 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 const reservationFetch = async () => {
 
   // в ссылке может быть неправильный сервер и порт
-  const response = await fetch(`http://localhost:3001/admincabinet`)
+  const response = await fetch(`/admincabinet`)
   console.log("sagaReservation:", response);
   const reservations = await response.json()
 
@@ -16,7 +16,7 @@ function* fetchReservation() {
 }
 
 
-export function* reservationWatcher() {
+export function* adminReservationWatcher() {
   console.log(456);
-  yield takeEvery("RESERVATIONS_FETCH", fetchReservation);
+  yield takeEvery("ADMIN_RESERVATIONS_FETCH", fetchReservation);
 }

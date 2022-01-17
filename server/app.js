@@ -17,14 +17,19 @@ const reviewsRoute = require('./routes/reviews.route');
 const categoriesRoute = require('./routes/categories.route');
 const portfolioRouter = require('./routes/portfolio.router');
 const portfolioCRouter = require('./routes/portfolioC.router');
+const servicesReserv = require('./routes/servicesReserv.route');
+const mastersReserv = require('./routes/mastersReserv.router');
+const createReserv = require('./routes/createReserv.router');
 const adminReservationRouter = require('./routes/adminReservations.route');
 const mastersRouter = require('./routes/masters.router');
-const adminRegistrationRouter = require('./routes/adminRegistration.route');
+const adminAuthRouter = require('./routes/adminAuth.route');
 const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
 const sessionRouter = require('./routes/session.route');
 const signoutRouter = require('./routes/signout.route');
 const cabinetRouter = require('./routes/cabinet.route');
+const adminChangeReservatioinRouter = require('./routes/adminChangeReservation.route');
+const adminDeleteUser = require('./routes/adminDeleteUser.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -57,11 +62,17 @@ app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
 app.use('/signup', clientRouter);
+app.use('/servicesreserv', servicesReserv);
+app.use('/mastersreserv', mastersReserv);
+app.use('/createreserv', createReserv);
+app.use('/cabinet', clientRouter);
 app.use('/signin', signinRouter);
+app.use('/adminform', adminAuthRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);
-app.use('/adminregistration', adminRegistrationRouter);
 app.use('/profile', cabinetRouter);
+app.use('/adminchangereservation', adminChangeReservatioinRouter);
+app.use('/deleteuser', adminDeleteUser);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux'
 
 function AddReviewForm({ setNewReview }) {
 

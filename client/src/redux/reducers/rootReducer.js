@@ -9,14 +9,14 @@ import { portfolioCReducer } from './portfolioCReducer';
 import reviewsReducer from './reviewsReducer';
 import servicesReducer from './servicesReducer';
 import mastersReducer from './mastersReducer';
-import adminRegistrationReducer from './adminRegistrationReducer';
 import reservationReducer from './reservationReducer'
+import { reservationCategoriesReducer } from './reservationCategoriesReducer';
 import sessionReducer from './sessionReducer'
 import cabinetReducer from './cabinetReducer'
 
 export const rootReducer = combineReducers({
   appReducer, reviewsReducer,
-  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, adminRegistrationReducer, sessionReducer,
+  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, sessionReducer, reservationCategoriesReducer,
   cabinetReducer
   // categoriesReducer,
 });
