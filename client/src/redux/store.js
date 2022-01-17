@@ -9,6 +9,11 @@ import { portfolioWatcher } from './sagas/portfolioSaga'
 import { portfolioCWatcher } from './sagas/portfolioCSaga'
 import { adminAuthWatcher } from './sagas/adminAuthSaga';
 import { adminReservationWatcher } from './sagas/adminReservationsSaga'
+import { reservationWatcher } from './sagas/reservationsSaga'
+import { reservationCategories } from './sagas/reservationCategoriesSaga';
+import { sessionWatcher } from './sagas/sessionSaga'
+import { adminRegistrationWatcher } from './sagas/adminRegistrationSaga';
+
 const sagaMiddleware = createSagaMiddleware()
 
 // sagaMiddleware.run(myWatcher)
@@ -20,3 +25,6 @@ sagaMiddleware.run(portfolioWatcher)
 sagaMiddleware.run(mySaga)
 sagaMiddleware.run(portfolioCWatcher)
 sagaMiddleware.run(adminAuthWatcher)
+sagaMiddleware.run(reservationCategories)
+sagaMiddleware.run(sessionWatcher)
+sagaMiddleware.run(adminRegistrationWatcher)
