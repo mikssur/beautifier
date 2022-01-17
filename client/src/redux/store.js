@@ -7,6 +7,8 @@ import { mySaga } from '../redux/sagas/sagas';
 // import { myWatcher } from './sagas/saga'
 import { portfolioWatcher } from './sagas/portfolioSaga'
 import { portfolioCWatcher } from './sagas/portfolioCSaga'
+import { adminAuthWatcher } from './sagas/adminAuthSaga';
+import { adminReservationWatcher } from './sagas/adminReservationsSaga'
 import { reservationWatcher } from './sagas/reservationsSaga'
 import { reservationCategories } from './sagas/reservationCategoriesSaga';
 import { sessionWatcher } from './sagas/sessionSaga'
@@ -18,10 +20,11 @@ const sagaMiddleware = createSagaMiddleware()
 // sagaMiddleware.run(portfolioWatcher)
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
-sagaMiddleware.run(reservationWatcher)
+sagaMiddleware.run(adminReservationWatcher)
 sagaMiddleware.run(portfolioWatcher)
 sagaMiddleware.run(mySaga)
 sagaMiddleware.run(portfolioCWatcher)
+sagaMiddleware.run(adminAuthWatcher)
 sagaMiddleware.run(reservationCategories)
 sagaMiddleware.run(sessionWatcher)
 sagaMiddleware.run(adminRegistrationWatcher)

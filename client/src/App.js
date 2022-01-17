@@ -39,7 +39,7 @@ function App() {
         </Route>
 
         <Route exact path="/categories/:categoryname">
-            <ServiceList />
+          <ServiceList />
         </Route>
 
         <Route exact path="/categories/:categoryname/:service">
@@ -60,10 +60,6 @@ function App() {
 
         <Route exact path="/adminform">
           <Admin />
-        </Route>
-
-        <Route exact path="/adminregistration">
-          <AdminRegistration />
         </Route>
 
         <Route exact path="/admincabinet">

@@ -16,7 +16,7 @@ function* fetchReservation() {
 }
 
 
-export function* reservationWatcher() {
+export function* adminReservationWatcher() {
   console.log(456);
-  yield takeEvery("RESERVATIONS_FETCH", fetchReservation);
+  yield takeEvery("ADMIN_RESERVATIONS_FETCH", fetchReservation);
 }
