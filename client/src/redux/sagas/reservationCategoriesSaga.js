@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
 const fetchReservationCategories = async () => {
-  const response = await fetch('http://localhost:3001/categories')
+  const response = await fetch('/categories')
   const categories = await response.json()
   return categories
 }

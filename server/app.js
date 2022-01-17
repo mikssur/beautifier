@@ -66,7 +66,6 @@ app.use('/signin', signinRouter);
 app.use('/adminform', adminAuthRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);
-app.use('/adminregistration', adminRegistrationRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
