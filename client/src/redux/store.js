@@ -10,6 +10,7 @@ import { portfolioCWatcher } from './sagas/portfolioCSaga'
 import { reservationWatcher } from './sagas/reservationsSaga'
 import { sessionWatcher } from './sagas/sessionSaga'
 import { adminRegistrationWatcher } from './sagas/adminRegistrationSaga';
+import { cabinetWatcher } from './sagas/cabinetSaga';
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -23,3 +24,5 @@ sagaMiddleware.run(mySaga)
 sagaMiddleware.run(portfolioCWatcher)
 sagaMiddleware.run(sessionWatcher)
 sagaMiddleware.run(adminRegistrationWatcher)
+sagaMiddleware.run(cabinetWatcher)
+
