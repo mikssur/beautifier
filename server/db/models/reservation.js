@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.STRING,
     serviceId: DataTypes.INTEGER,
     time: DataTypes.STRING,
-    date: DataTypes.DATE,
+    date: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Reservation',

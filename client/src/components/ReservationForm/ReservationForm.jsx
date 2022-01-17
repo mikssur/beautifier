@@ -1,12 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+import FreeTime from '../FreeTime/FreeTime';
 
 function ReservationForm() {
 
-  const { reservationServiceId, reservationMasterId } = useSelector(state => state.reservationCategoriesReducer)
+  const dispatch = useDispatch()
+
+  const { reservationServiceId, reservationMasterId, freeTime } = useSelector(state => state.reservationCategoriesReducer);
+
   function newDatee(event) {
     event.preventDefault()
-    fetch('http://localhost:3001/createreserv', {
+    fetch('/createreserv', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -18,18 +22,35 @@ function ReservationForm() {
         date: event.target.Date.value,
       })
     })
+    dispatch({
+      type: 'CLEAR_RESERV'
+    })
+  }
+
+  function getFreeTime(event) {
+    event.preventDefault()
+    const select = event.target.value;
+
+    (async () => {
+
+      const response = await fetch(`/freetime/${select}`)
+      const res = await response.json();
+      console.log(res)
+      dispatch({
+        type: 'INIT_FREE_TIME',
+        payload: res,
+      })
+    })();
   }
 
   return (
     <form onSubmit={newDatee}>
       <span>Выберите день: </span>
-      <input name='Date' type="date" />
+      <input name='Date' type="date" onChange={getFreeTime} />
       <br />
       <span>Свободное время: </span>
-      <select name="time">
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>16:00</option>
+      <select name="time" >
+        {freeTime ? freeTime.map(el => <FreeTime key={el} el={el} />) : null}
       </select>
       <br />
       <span>Ваше имя:</span>
@@ -44,3 +65,4 @@ function ReservationForm() {
 }
 
 export default ReservationForm;
+

@@ -8,14 +8,10 @@ import ReservationForm from '../ReservationForm/ReservationForm'
 
 function ReservationCategories(props) {
 
-
-
   const { reservationCategories } = useSelector(state => state.reservationCategoriesReducer)
   const { reservationServices } = useSelector(state => state.reservationCategoriesReducer)
   const { reservationMasters } = useSelector(state => state.reservationCategoriesReducer)
   const { reservationMasterId } = useSelector(state => state.reservationCategoriesReducer)
-
-  // console.log(reservationMasters);
 
   const dispatch = useDispatch()
 
@@ -33,7 +29,7 @@ function ReservationCategories(props) {
         {reservationMasters ? reservationMasters.map(el => <ReservationMasters key={el.id} id={el.id} name={el.name} />) : 'netu'}
       </div>
       <div>
-        {reservationMasterId ? <ReservationForm /> : 'netu'}
+        {reservationMasterId ? <ReservationForm /> : null}
       </div>
     </div>
   );

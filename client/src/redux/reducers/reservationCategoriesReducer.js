@@ -1,3 +1,4 @@
+import { time } from '../../helpers/time'
 
 const reservationCategoriesInitialState = {
   reservationCategories: [],
@@ -5,6 +6,8 @@ const reservationCategoriesInitialState = {
   reservationMasters: [],
   reservationServiceId: null,
   reservationMasterId: null,
+  freeTime: [],
+  allTime: time
 }
 
 export const reservationCategoriesReducer = (state = reservationCategoriesInitialState, action) => {
@@ -21,7 +24,6 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
     case 'INIT_RESERVATION_MASTERS':
       const { masters } = action.payload;
       const { serviceId } = action.payload;
-      // console.log(serviceId);
       const copyState = { ...state };
 
       let copyMasters = copyState.reservationMasters
@@ -35,6 +37,31 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
     case 'ADD_RESERVATION_MASTER':
       const masterId = action.payload
       return { ...state, reservationMasterId: masterId };
+
+
+    case 'CLEAR_RESERV':
+      return {
+        ...state,
+        reservationServices: [],
+        reservationMasters: [],
+        reservationServiceId: null,
+        reservationMasterId: null,
+      };
+
+    case 'INIT_FREE_TIME':
+      const busyMasterId = state.reservationMasterId
+      const { allTime } = state
+      console.log('===========>>. state mast id', busyMasterId);
+      const busyMasters = action.payload.filter(el => el.masterId === +busyMasterId)
+      console.log('======>>>> mastid', busyMasters)
+      const busyTime = busyMasters.map(el => el.time);
+      console.log('=============>>> busy', busyTime);
+
+      let freeTime = allTime.filter(el => !busyTime.includes(el))
+
+      return {
+        ...state, freeTime,
+      };
 
     default:
       return state

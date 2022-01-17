@@ -27,6 +27,7 @@ const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
 const sessionRouter = require('./routes/session.route');
 const signoutRouter = require('./routes/signout.route');
+const freeTimeRouter = require('./routes/freeTime.router');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -66,6 +67,7 @@ app.use('/signin', signinRouter);
 app.use('/adminform', adminAuthRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);
+app.use('/freetime', freeTimeRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
