@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 const adminRegistrationFetch = async ({ login, pass }) => {
   console.log(login);
-  const response = await fetch(`http://localhost:3001/adminregistration`, {
+  const response = await fetch(`/adminregistration`, {
     method: 'POST',
     headers: { 'Content-Type': 'Application/json' },
     body: JSON.stringify({

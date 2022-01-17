@@ -55,7 +55,7 @@ app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
-app.use('/cabinet', clientRouter);
+app.use('/signup', clientRouter);
 app.use('/signin', signinRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);

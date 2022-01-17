@@ -46,10 +46,13 @@ function Nav(props) {
         </li> : ''}
 
       {session.authClient ?
-        <button onClick={() => signOut()}>Sign Out</button>
+        <> <li>
+          <Link to="/cabinet">Cabinet</Link>
+        </li>
+          <button onClick={() => signOut()}>Sign Out</button></>
         : <>
           <li>
-            <Link to="/cabinet">Sign Up</Link>
+            <Link to="/signup">Sign Up</Link>
           </li>
           <li>
             <Link to="/signin">Sign In</Link>
