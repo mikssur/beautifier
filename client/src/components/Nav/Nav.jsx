@@ -11,8 +11,8 @@ function Nav(props) {
     dispatch({ type: 'SESSION_FETCH' })
   }, [dispatch])
 
-  console.log(session.authClient, 'client session')
-
+ // console.log(session.authClient, 'client session')
+  console.log(session);
   async function signOut() {
     try {
       await fetch('/signout');
