@@ -44,7 +44,9 @@ function Nav(props) {
         <li>
           <Link to="/admincabinet">Кабинет</Link>
         </li> : ''}
-
+      <li>
+          <Link to="/reservation">Записаться</Link>
+      </li>
       {session.authClient ?
         <button onClick={() => signOut()}>Sign Out</button>
         : <>
