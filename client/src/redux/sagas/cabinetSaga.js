@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 const CabinetFetch = async () => {
   // в ссылке может быть неправильный сервер
-  const response = await fetch(`/cabinet`)
+  const response = await fetch(`/profile`)
   const responseJson = await response.json()
   console.log(" 1 fetch 2", responseJson);
   return responseJson

@@ -47,7 +47,7 @@ function Nav(props) {
 
       {session.authClient ?
         <> <li>
-          <Link to="/cabinet">Cabinet</Link>
+          <Link to='/profile'> Cabinet</Link>
         </li>
           <button onClick={() => signOut()}>Sign Out</button></>
         : <>

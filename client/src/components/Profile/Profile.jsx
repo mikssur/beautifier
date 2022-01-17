@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Cabinet(props) {
+function Profile(props) {
   const dispatch = useDispatch()
   const { reservations, masters, services } = useSelector(state => state.cabinetReducer.reservation)
   console.log(reservations, 'client console')
@@ -32,4 +32,4 @@ function Cabinet(props) {
   );
 }
 
-export default Cabinet;
+export default Profile;

@@ -16,7 +16,7 @@ import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 import AdminRegistration from './components/AdminRegistration/AdminRegistration.jsx';
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
-import Cabinet from "./components/Cabinet/Cabinet";
+import Profile from "./components/Profile/Profile"
 
 
 function App() {
@@ -82,8 +82,8 @@ function App() {
           <Portfolio />
         </Route>
 
-        <Route exact path="/cabinet">
-          <Cabinet />
+        <Route exact path="/profile">
+          <Profile />
         </Route>
 
         <Route exact path="/portfolio/:masterId">
