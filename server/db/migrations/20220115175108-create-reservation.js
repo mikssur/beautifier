@@ -11,9 +11,12 @@ module.exports = {
         type: Sequelize.STRING,
       },
       clientNumber: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       masterId: {
+        type: Sequelize.INTEGER,
+      },
+      price: {
         type: Sequelize.INTEGER,
       },
       serviceId: {

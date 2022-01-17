@@ -20,7 +20,7 @@ function Nav(props) {
         <Link to="/portfolio">Portfolio</Link>
       </li>
       <li>
-        <Link to="/admincabinet">Кабинет</Link>
+        <Link to="/admincabinet">Admin Cabinet</Link>
       </li>
 
       <li>

@@ -19,7 +19,7 @@ const portfolioRouter = require('./routes/portfolio.router');
 const portfolioCRouter = require('./routes/portfolioC.router');
 const adminReservationRouter = require('./routes/adminReservations.route');
 const mastersRouter = require('./routes/masters.router');
-const adminRegistrationRouter = require('./routes/adminRegistration.route');
+const adminAuthRouter = require('./routes/adminAuth.route');
 const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
 
@@ -53,7 +53,7 @@ app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
 app.use('/cabinet', clientRouter);
 app.use('/signin', signinRouter);
-app.use('/adminregistration', adminRegistrationRouter);
+app.use('/adminform', adminAuthRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
