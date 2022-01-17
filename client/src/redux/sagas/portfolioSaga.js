@@ -3,7 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 const portfolioFetch = async () => {
 
   // в ссылке может быть неправильный сервер
-  const response = await fetch(`http://localhost:3001/portfolio`)
+  const response = await fetch(`/portfolio`)
   const masters = await response.json()
   console.log(" 1 fetch 2", response);
   return masters

@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 const portfolioFetchC = async ({ masterId }) => {
   console.log("fetch 1");
-  const response = await fetch(`http://localhost:3001/portfolio/${masterId}`)
+  const response = await fetch(`/portfolio/${masterId}`)
   console.log("fetch 2", response);
   const masters = await response.json()
 

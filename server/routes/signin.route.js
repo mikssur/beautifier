@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { Client } = require('../db/models');
 
 router.route('/')
@@ -7,7 +8,6 @@ router.route('/')
     const checkClient = await Client.findOne({
       where: {
         telephone,
-        password,
       },
     });
 
@@ -18,11 +18,21 @@ router.route('/')
       });
     }
 
-    req.session.client = {
+    const isCorrectPassword = await bcrypt.compare(password, checkClient.password);
+    if (!isCorrectPassword) {
+      res.status(401).json({
+        message: 'Пароль введен неправильно!',
+        authUser: false,
+      });
+      return;
+    }
+
+    req.session.user = {
       id: checkClient.id,
       login: checkClient.login,
       telephone: checkClient.telephone,
       signedUp: true,
+      isAdmin: false,
     };
 
     res.json({

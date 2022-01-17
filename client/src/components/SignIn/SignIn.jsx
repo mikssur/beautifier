@@ -7,7 +7,7 @@ function SignIn(props) {
   async function clientFormHandler(event, clientPassInput, clientTelInput) {
     event.preventDefault();
     try {
-      await fetch('http://localhost:3001/signin', {
+      await fetch('/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'Application/json' },
         body: JSON.stringify({
