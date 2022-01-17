@@ -11,9 +11,10 @@ import servicesReducer from './servicesReducer';
 import mastersReducer from './mastersReducer';
 import adminRegistrationReducer from './adminRegistrationReducer';
 import reservationReducer from './reservationReducer'
+import sessionReducer from './sessionReducer'
 
 export const rootReducer = combineReducers({
   appReducer, reviewsReducer,
-  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, adminRegistrationReducer,
+  portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, adminRegistrationReducer, sessionReducer
   // categoriesReducer,
 });

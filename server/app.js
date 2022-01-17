@@ -22,6 +22,8 @@ const mastersRouter = require('./routes/masters.router');
 const adminRegistrationRouter = require('./routes/adminRegistration.route');
 const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
+const sessionRouter = require('./routes/session.route');
+const signoutRouter = require('./routes/signout.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -43,7 +45,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(session(sessionConfig));
 app.use(sessionMiddleware);
-app.use(cors());
+app.use(cors({
+  credentials: true,
+}));
 
 app.use('/reviews', reviewsRoute);
 app.use('/portfolio', portfolioRouter);
@@ -53,6 +57,8 @@ app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
 app.use('/cabinet', clientRouter);
 app.use('/signin', signinRouter);
+app.use('/session', sessionRouter);
+app.use('/signout', signoutRouter);
 app.use('/adminregistration', adminRegistrationRouter);
 
 app.listen(PORT, () => {

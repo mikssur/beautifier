@@ -10,9 +10,10 @@ function Cabinet(props) {
     event.preventDefault();
 
     try {
-      await fetch('http://localhost:3001/cabinet', {
+      await fetch('/cabinet', {
         method: 'POST',
-        headers: { 'Content-Type': 'Application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
           login: clientLoginInput.current.value,
           password: clientPassInput.current.value,
