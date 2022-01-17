@@ -31,14 +31,10 @@ router.route('/')
           isAdmin: true,
         };
 
-        res.json({
-          message: 'Авторизация прошла успешна!',
-          authUser: true,
-        });
+        const reservations = await Reservation.findAll();
+        res.json(reservations);
       }
     }
-    const reservations = await Reservation.findAll();
-    res.json(reservations);
   });
 
 module.exports = router;
