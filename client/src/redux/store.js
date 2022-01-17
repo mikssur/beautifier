@@ -11,6 +11,7 @@ import { adminAuthWatcher } from './sagas/adminAuthSaga';
 import { adminReservationWatcher } from './sagas/adminReservationsSaga'
 import { reservationCategories } from './sagas/reservationCategoriesSaga';
 import { sessionWatcher } from './sagas/sessionSaga'
+import { cabinetWatcher } from './sagas/cabinetSaga';
 import { adminReservationChangeWatcher } from './sagas/adminReservationChangeSaga';
 import { deleteUserWatcher } from './sagas/deleteUserSaga'
 
@@ -27,6 +28,7 @@ sagaMiddleware.run(portfolioCWatcher)
 sagaMiddleware.run(adminAuthWatcher)
 sagaMiddleware.run(reservationCategories)
 sagaMiddleware.run(sessionWatcher)
+sagaMiddleware.run(cabinetWatcher)
 sagaMiddleware.run(adminReservationChangeWatcher)
 sagaMiddleware.run(deleteUserWatcher)
 

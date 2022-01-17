@@ -1,16 +1,17 @@
 import React from 'react';
 import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Cabinet(props) {
+function SignUp(props) {
   const clientLoginInput = useRef();
   const clientPassInput = useRef();
   const clientTelInput = useRef();
+  const { session } = useSelector((state) => state.sessionReducer)
   async function clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput) {
     event.preventDefault();
 
     try {
-      await fetch('/cabinet', {
+      await fetch('/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -20,6 +21,7 @@ function Cabinet(props) {
           telephone: clientTelInput.current.value,
         })
       })
+
     }
 
     catch (err) {
@@ -31,13 +33,17 @@ function Cabinet(props) {
 
   }
   return (
-    <div>
-      Имя:<input ref={clientLoginInput} type="text" name="" id="clientLogin" />
-      Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
-      Phone:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
-      <button onClick={(event) => clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput)}>Зарегистрироваться</button>
-    </div>
+    <>
+      {!session.authClient ?
+        <div>
+          Имя:<input ref={clientLoginInput} type="text" name="" id="clientLogin" />
+          Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
+          Phone:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
+          <button onClick={(event) => clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput)}>Зарегистрироваться</button>
+        </div>
+        : <p> Регистрация прошла успешно </p>}
+    </>
   );
 }
 
-export default Cabinet;
+export default SignUp;

@@ -27,6 +27,7 @@ const clientRouter = require('./routes/client.route');
 const signinRouter = require('./routes/signin.route');
 const sessionRouter = require('./routes/session.route');
 const signoutRouter = require('./routes/signout.route');
+const cabinetRouter = require('./routes/cabinet.route');
 const adminChangeReservatioinRouter = require('./routes/adminChangeReservation.route');
 const adminDeleteUser = require('./routes/adminDeleteUser.route');
 
@@ -60,6 +61,7 @@ app.use('/categories', categoriesRoute);
 app.use('/masters', mastersRouter);
 app.use('/portfolio', portfolioCRouter);
 app.use('/admincabinet', adminReservationRouter);
+app.use('/signup', clientRouter);
 app.use('/servicesreserv', servicesReserv);
 app.use('/mastersreserv', mastersReserv);
 app.use('/createreserv', createReserv);
@@ -68,6 +70,7 @@ app.use('/signin', signinRouter);
 app.use('/adminform', adminAuthRouter);
 app.use('/session', sessionRouter);
 app.use('/signout', signoutRouter);
+app.use('/profile', cabinetRouter);
 app.use('/adminchangereservation', adminChangeReservatioinRouter);
 app.use('/deleteuser', adminDeleteUser);
 

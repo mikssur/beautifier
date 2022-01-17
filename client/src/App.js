@@ -15,8 +15,9 @@ import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 import ReservationCategories from './components/ReservationCAtegories/ReservationCategories.jsx';
 import AdminRegistration from './components/AdminRegistration/AdminRegistration.jsx';
-import Cabinet from "./components/Cabinet/Cabinet.jsx";
+import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
+import Profile from "./components/Profile/Profile"
 
 
 function App() {
@@ -66,8 +67,8 @@ function App() {
           <AdminCabinet />
         </Route>
 
-        <Route exact path="/cabinet">
-          <Cabinet />
+        <Route exact path="/signup">
+          <SignUp />
         </Route>
 
         <Route exact path="/signin">
@@ -76,6 +77,10 @@ function App() {
 
         <Route exact path="/portfolio">
           <Portfolio />
+        </Route>
+
+        <Route exact path="/profile">
+          <Profile />
         </Route>
 
         <Route exact path="/portfolio/:masterId">
