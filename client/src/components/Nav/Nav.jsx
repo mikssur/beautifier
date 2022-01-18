@@ -47,21 +47,29 @@ function Nav(props) {
       <li>
           <Link to="/reservation">Записаться</Link>
       </li>
-      {session.authClient ?
+      { 
+      session.isAdmin ?
         <> <li>
-          <Link to='/profile'> Cabinet</Link>
+          <Link to='/admincabinet'>Admin Cabinet</Link>
         </li>
           <button onClick={() => signOut()}>Sign Out</button></>
-        : <>
-          <li>
-            <Link to="/signup">Sign Up</Link>
-          </li>
-          <li>
-            <Link to="/signin">Sign In</Link>
-          </li>
-        </>}
-
-
+        : 
+        session.authClient ? 
+        <> 
+        <li>
+        <Link to='/profile'> Cabinet</Link>
+      </li>
+        <button onClick={() => signOut()}>Sign Out</button></> 
+        : 
+        <>
+        <li>
+          <Link to="/signup">Sign Up</Link>
+        </li>
+        <li>
+          <Link to="/signin">Sign In</Link>
+        </li>
+      </>
+      }
     </ul>
   );
 }

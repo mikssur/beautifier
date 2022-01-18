@@ -6,12 +6,13 @@ const { Client } = require('../db/models');
 router.route('/')
   .post(async (req, res) => {
     const { login, password } = req.body;
-    console.log(req.body.password);
+    console.log(req.body);
     const findAdmin = await Client.findOne({
       where: {
         login,
       },
     });
+    console.log(findAdmin);
     if (findAdmin) {
       const isCorrectPassword = await bcrypt.compare(password, findAdmin.password);
       console.log(isCorrectPassword);
@@ -22,8 +23,12 @@ router.route('/')
         //   authUser: false,
         // })
         // return;
+        res.json({
+          message: 'Не верный пароль',
+          authUser: false,
+        });
       } else {
-        req.session.client = {
+        req.session.user = {
           id: findAdmin.id,
           login: findAdmin.login,
           telephone: findAdmin.telephone,
@@ -31,16 +36,16 @@ router.route('/')
           isAdmin: true,
         };
 
-        const reservations = await Reservation.findAll();
-        res.json(reservations);
+        res.json({
+          authClient: true,
+          isAdmin: true,
+        });
       }
     }
+    res.json({
+      message: 'Не верный пользователь',
+      authUser: false,
+    });
   });
 
 module.exports = router;
-
-// .post((req, res) => {
-//   Client.create(req.body)
-//     .then((newClient) => res.status(201).json(newClient))
-//     .catch((error) => res.status(500).json(error));
-// });
