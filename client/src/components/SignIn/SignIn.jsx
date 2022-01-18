@@ -1,9 +1,12 @@
 import React from 'react';
 import { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 function SignIn(props) {
+  const dispatch = useDispatch();
   const clientPassInput = useRef();
   const clientTelInput = useRef();
+  const { session } = useSelector((state) => state.sessionReducer)
   async function clientFormHandler(event, clientPassInput, clientTelInput) {
     event.preventDefault();
     try {
@@ -15,6 +18,8 @@ function SignIn(props) {
           telephone: clientTelInput.current.value,
         })
       })
+      dispatch({ type: 'SESSION_FETCH' })
+      setTimeout(() => { window.location.href = '/'; }, 1000);
     }
 
     catch (err) {
@@ -24,11 +29,15 @@ function SignIn(props) {
     clientTelInput.current.value = ''
   }
   return (
-    <div>
-      Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
-      Phone:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
-      <button onClick={(event) => clientFormHandler(event, clientPassInput, clientTelInput)}>Зарегистрироваться</button>
-    </div>
+    <>
+      {!session.authClient ?
+        <div>
+          Телефон:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
+          Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
+          <button onClick={(event) => clientFormHandler(event, clientPassInput, clientTelInput)}>Авторизироваться</button>
+        </div>
+        : <p> Авторизация прошла успешно </p>}
+    </>
   );
 }
 

@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 
 function Nav(props) {
-  const dispatch = useDispatch();
   const { session } = useSelector((state) => state.sessionReducer)
-  // должно быть в юз эффекте
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({ type: 'SESSION_FETCH' })
-  }, [dispatch])
 
- // console.log(session.authClient, 'client session')
+  // console.log(session.authClient, 'client session')
   console.log(session);
   async function signOut() {
     try {
       await fetch('/signout');
+      dispatch({ type: 'SESSION_FETCH' })
     }
     catch (err) {
       console.log(err.message)
@@ -45,7 +42,7 @@ function Nav(props) {
           <Link to="/admincabinet">Кабинет</Link>
         </li> : ''}
       <li>
-          <Link to="/reservation">Записаться</Link>
+        <Link to="/reservation">Записаться</Link>
       </li>
       {session.authClient ?
         <> <li>

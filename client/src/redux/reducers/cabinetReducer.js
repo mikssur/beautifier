@@ -6,12 +6,17 @@ export const cabinetReducer = (state = initialState, action) => {
     case 'INIT_CABINET': {
       console.log(action.payload)
       const copyReservation = { ...state.reservation };
-      // это я их просто отдаю
 
 
       copyReservation.masters = action.payload.masters;
       copyReservation.services = action.payload.services;
       copyReservation.reservations = action.payload.reservations;
+
+      return { ...state, reservation: copyReservation }
+    }
+    case 'DELETE_RESERVATION': {
+      const copyReservation = { ...state.reservation };
+      copyReservation.reservations = action.payload;
 
       return { ...state, reservation: copyReservation }
     }

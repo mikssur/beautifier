@@ -27,13 +27,6 @@ router.route('/')
       isAdmin: false,
     });
 
-    req.session.user = {
-      id: newClient.id,
-      login: newClient.login,
-      telephone: newClient.telephone,
-      signedUp: true,
-      isAdmin: false,
-    };
     res.json({ createUser: true, message: 'Успешная регистрация' });
   });
 

@@ -31,6 +31,7 @@ const freeTimeRouter = require('./routes/freeTime.router');
 const cabinetRouter = require('./routes/cabinet.route');
 const adminChangeReservatioinRouter = require('./routes/adminChangeReservation.route');
 const adminDeleteUser = require('./routes/adminDeleteUser.route');
+const resDelete = require('./routes/resDelete.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -75,6 +76,7 @@ app.use('/freetime', freeTimeRouter);
 app.use('/profile', cabinetRouter);
 app.use('/adminchangereservation', adminChangeReservatioinRouter);
 app.use('/deleteuser', adminDeleteUser);
+app.use('/deleteres', resDelete);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
