@@ -34,7 +34,6 @@ router.route('/')
       signedUp: true,
       isAdmin: false,
     };
-
     res.json({ createUser: true, message: 'Успешная регистрация' });
   });
 
