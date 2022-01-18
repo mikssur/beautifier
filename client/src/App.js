@@ -20,6 +20,7 @@ import SignIn from "./components/SignIn/SignIn";
 import Profile from "./components/Profile/Profile"
 import { useDispatch } from "react-redux";
 
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
+import './Nav.css';
 
 function Nav(props) {
   const { session } = useSelector((state) => state.sessionReducer)
@@ -21,6 +22,8 @@ function Nav(props) {
   }
 
   return (
+    <nav className="main-nav">
+
     <ul>
       <li>
         <Link to="/">Home</Link>
@@ -60,6 +63,7 @@ function Nav(props) {
 
 
     </ul>
+    </nav>
   );
 }
 
