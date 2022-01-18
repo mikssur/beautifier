@@ -7,6 +7,7 @@ import { gettFetchServicesAC } from '../../redux/actionCreators/servicesAC';
 function Category({ category }) {
   const dispatch = useDispatch()
   const categoryname = category.name
+  const picture = category.picture
   const id = category.id
   console.log(id, 'ETO IDIDIDIDIDIDIDIDIDIIDIDD')
 
@@ -18,16 +19,13 @@ function Category({ category }) {
   //     },
   //   };
   // }
-  
+
   return (
     <>
-      <div>
-        <li>Name: {categoryname}</li>
-      </div>
-
       <Link to={`/categories/${categoryname}`}>
-        <button onClick={() => dispatch({type: 'GET_FETCH_SERVICES', payload: {id}})} size="small">Выбрать</button>
+        <li onClick={() => dispatch({ type: 'GET_FETCH_SERVICES', payload: { id } })} size="small">{categoryname}</li>
       </Link>
+      <img style={{width: '150px', height: '170px'}} src={picture} alt="" />
     </>
   );
 }
