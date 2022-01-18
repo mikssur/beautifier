@@ -1,11 +1,20 @@
 const route = require('express').Router();
 const { Reservation } = require('../db/models');
+const { Service } = require('../db/models');
 
-route.post('/', (req, res) => {
+route.post('/', async (req, res) => {
+  const price = await Service.findOne({
+    where: {
+      id: req.body.serviceId,
+    },
+    raw: true,
+  });
+// console.log('==========>>> price', price.price);
+  req.body.price = price.price;
   console.log(req.body);
-  Reservation.create(req.body)
-    .then((newReview) => res.status(201).json(newReview))
-    .catch((error) => res.status(500).json(error));
+
+  Reservation.create(req.body);
+  res.status(201);
 });
 
 module.exports = route;
