@@ -46,16 +46,17 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
         reservationMasters: [],
         reservationServiceId: null,
         reservationMasterId: null,
+        freeTime: [],
       };
 
     case 'INIT_FREE_TIME':
       const busyMasterId = state.reservationMasterId
       const { allTime } = state
-      console.log('===========>>. state mast id', busyMasterId);
+      // console.log('===========>>. state mast id', busyMasterId);
       const busyMasters = action.payload.filter(el => el.masterId === +busyMasterId)
-      console.log('======>>>> mastid', busyMasters)
+      // console.log('======>>>> mastid', busyMasters)
       const busyTime = busyMasters.map(el => el.time);
-      console.log('=============>>> busy', busyTime);
+      // console.log('=============>>> busy', busyTime);
 
       let freeTime = allTime.filter(el => !busyTime.includes(el))
 

@@ -3,14 +3,15 @@ const { Reservation } = require('../db/models');
 
 route.get('/:id', async (req, res) => {
   const date = req.params.id;
-  Reservation.findAll({
+  // console.log('=============>>>> date', date);
+  const reservations = await Reservation.findAll({
     where: {
       date,
     },
     raw: true,
-  })
-    .then((freeTime) => res.json(freeTime))
-    .catch((error) => console.log(error));
+  });
+  res.json(reservations);
+  // console.log('================>>>> resrevations', reservations);
 });
 
 module.exports = route;
