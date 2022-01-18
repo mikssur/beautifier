@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav/Nav.jsx'
 import Home from "./components/Home/Home.jsx";
@@ -19,10 +19,15 @@ import SignIn from "./components/SignIn/SignIn";
 import Profile from "./components/Profile/Profile"
 import AdminMasters from './components/AdminMasters/AdminMasters.jsx';
 
-function App() {
+import { useDispatch } from "react-redux";
 
-  // let currentURL = window.location.pathname
-  // console.log('DOLBANNIJ URLLLLLLLLLLLLLLLLLL', currentURL)
+function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'SESSION_FETCH' })
+  }, [dispatch])
+
 
   return (
     <BrowserRouter>

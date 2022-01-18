@@ -7,6 +7,15 @@ function ReservationForm() {
   const dispatch = useDispatch()
 
   const { reservationServiceId, reservationMasterId, freeTime } = useSelector(state => state.reservationCategoriesReducer);
+  // console.log(new Date);
+  const thisDate = new Date().toLocaleDateString()
+  // 18.01.2022
+  const day = thisDate.slice(0, 2)
+  const month = thisDate.slice(3, 5)
+  const year = thisDate.slice(-4)
+  const nowDate = year + '-' + month + '-' + day
+
+  // console.log(nowDate);
 
   function newDatee(event) {
     event.preventDefault()
@@ -30,12 +39,13 @@ function ReservationForm() {
   function getFreeTime(event) {
     event.preventDefault()
     const select = event.target.value;
+    // console.log('select++++', select);
 
     (async () => {
 
       const response = await fetch(`/freetime/${select}`)
       const res = await response.json();
-      console.log(res)
+      // console.log(res)
       dispatch({
         type: 'INIT_FREE_TIME',
         payload: res,
@@ -46,7 +56,7 @@ function ReservationForm() {
   return (
     <form onSubmit={newDatee}>
       <span>Выберите день: </span>
-      <input name='Date' type="date" onChange={getFreeTime} />
+      <input name='Date' type="date" onChange={getFreeTime} min={nowDate} />
       <br />
       <span>Свободное время: </span>
       <select name="time" >
