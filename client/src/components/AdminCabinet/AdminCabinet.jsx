@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AdminReservations from '../AdminReservations/AdminReservations';
+import { Link } from 'react-router-dom';
 
 function AdminCabinet(props) {
 
@@ -15,7 +16,8 @@ function AdminCabinet(props) {
   console.log(reservations);
   return (
     <div>
-      <div>Личный кабинет</div>
+      <Link to="/admincabinet">Личный кабинет</Link>
+      {/* <Link to="/adminmasters">Мастера</Link> */}
       <div>
       {reservations.map(reservation => <AdminReservations key={reservation.id} id={reservation.id} />)}
       </div>

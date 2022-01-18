@@ -14,12 +14,12 @@ import Portfolio from "./components/Portfolio/Portfolio.jsx"
 import PortfolioCard from "./components/PortfolioCard/PortfolioCard.jsx"
 import AdminCabinet from "./components/AdminCabinet/AdminCabinet.jsx";
 import ReservationCategories from './components/ReservationCAtegories/ReservationCategories.jsx';
-import AdminRegistration from './components/AdminRegistration/AdminRegistration.jsx';
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
 import Profile from "./components/Profile/Profile"
-import { useDispatch } from "react-redux";
+import AdminMasters from './components/AdminMasters/AdminMasters.jsx';
 
+import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
@@ -69,6 +69,10 @@ function App() {
 
         <Route exact path="/admincabinet">
           <AdminCabinet />
+        </Route>
+
+        <Route exact path="/adminmasters">
+          <AdminMasters />
         </Route>
 
         <Route exact path="/signup">
