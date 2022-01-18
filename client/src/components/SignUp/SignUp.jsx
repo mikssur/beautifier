@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 function SignUp(props) {
+  const dispatch = useDispatch();
   const clientLoginInput = useRef();
   const clientPassInput = useRef();
   const clientTelInput = useRef();
@@ -21,7 +22,7 @@ function SignUp(props) {
           telephone: clientTelInput.current.value,
         })
       })
-
+      setTimeout(() => { window.location.href = '/signin'; }, 1000);
     }
 
     catch (err) {
@@ -38,7 +39,7 @@ function SignUp(props) {
         <div>
           Имя:<input ref={clientLoginInput} type="text" name="" id="clientLogin" />
           Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
-          Phone:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
+          Телефон:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
           <button onClick={(event) => clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput)}>Зарегистрироваться</button>
         </div>
         : <p> Регистрация прошла успешно </p>}

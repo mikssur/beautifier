@@ -9,6 +9,20 @@ function Profile(props) {
   useEffect(() => {
     dispatch({ type: 'CABINET_FETCH' })
   }, [dispatch])
+
+  async function deleteRes(event) {
+    const reservantionId = event.target.id;
+    const response = await fetch(`/deleteres`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'Application/json' },
+      body: JSON.stringify({
+        id: reservantionId,
+      })
+    })
+    const reservations = await response.json()
+
+    dispatch({type: 'DELETE_RESERVATION', payload: reservations})
+  }
   return (
     <div>
       {reservations ?
@@ -26,7 +40,7 @@ function Profile(props) {
                 return <p>{service.name}</p>
               }
             })}
-            <button>Удалить запись</button></div></>
+            <button id={el.id} onClick={(event) => deleteRes(event)}>Удалить запись</button></div></>
         }) : <p>Записи отсутствуют</p>
       }     </div>
   );

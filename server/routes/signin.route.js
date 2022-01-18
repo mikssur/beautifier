@@ -16,29 +16,29 @@ router.route('/')
         message: 'Такой пользователь не существует!',
         authUser: false,
       });
-    }
+    } else {
+      const isCorrectPassword = await bcrypt.compare(password, checkClient.password);
+      if (!isCorrectPassword) {
+        res.status(401).json({
+          message: 'Пароль введен неправильно!',
+          authUser: false,
+        });
+        return;
+      }
 
-    const isCorrectPassword = await bcrypt.compare(password, checkClient.password);
-    if (!isCorrectPassword) {
-      res.status(401).json({
-        message: 'Пароль введен неправильно!',
-        authUser: false,
+      req.session.user = {
+        id: checkClient.id,
+        login: checkClient.login,
+        telephone: checkClient.telephone,
+        signedUp: true,
+        isAdmin: false,
+      };
+
+      res.json({
+        message: 'Авторизация прошла успешна!',
+        authUser: true,
       });
-      return;
     }
-
-    req.session.user = {
-      id: checkClient.id,
-      login: checkClient.login,
-      telephone: checkClient.telephone,
-      signedUp: true,
-      isAdmin: false,
-    };
-
-    res.json({
-      message: 'Авторизация прошла успешна!',
-      authUser: true,
-    });
   });
 
 module.exports = router;
