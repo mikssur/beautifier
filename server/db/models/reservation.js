@@ -14,13 +14,49 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Reservation.init({
-    clientName: DataTypes.STRING,
-    clientNumber: DataTypes.STRING,
-    masterId: DataTypes.INTEGER,
-    price: DataTypes.STRING,
-    serviceId: DataTypes.INTEGER,
-    time: DataTypes.STRING,
-    date: DataTypes.STRING,
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    clientName: {
+      type: DataTypes.STRING,
+    },
+    clientNumber: {
+      type: DataTypes.STRING,
+    },
+    masterId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Masters',
+        key: 'id',
+      },
+    },
+    price: {
+      type: DataTypes.INTEGER,
+    },
+    serviceId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Services',
+        key: 'id',
+      },
+    },
+    time: {
+      type: DataTypes.STRING,
+    },
+    date: {
+      type: DataTypes.STRING,
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
   }, {
     sequelize,
     modelName: 'Reservation',

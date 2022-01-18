@@ -15,12 +15,20 @@ module.exports = {
       },
       masterId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Masters',
+          key: 'id',
+        },
       },
       price: {
         type: Sequelize.INTEGER,
       },
       serviceId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Services',
+          key: 'id',
+        },
       },
       time: {
         type: Sequelize.STRING,

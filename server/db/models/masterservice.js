@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class masterService extends Model {
     /**
@@ -12,10 +12,36 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
+  }
   masterService.init({
-    masterId: DataTypes.INTEGER,
-    serviceId: DataTypes.INTEGER
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    masterId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Master',
+        key: 'id',
+      },
+    },
+    serviceId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Service',
+        key: 'id',
+      },
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+    },
   }, {
     sequelize,
     modelName: 'masterService',
