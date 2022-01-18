@@ -14,8 +14,14 @@ module.exports = {
       categoryId: {
         type: Sequelize.TEXT
       },
+      description: {
+        type: Sequelize.TEXT
+      },
       price: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
+      },
+      picture: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

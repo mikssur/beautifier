@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Master extends Model {
     /**
@@ -10,12 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      // this.belongsToMany(Service, { through: 'MasterService' });
       // define association here
     }
-  };
+  }
   Master.init({
     name: DataTypes.TEXT,
-    category: DataTypes.TEXT
+    category: DataTypes.TEXT,
+    picture: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Master',

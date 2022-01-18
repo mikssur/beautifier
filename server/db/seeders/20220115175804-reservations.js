@@ -7,6 +7,9 @@ module.exports = {
       {
         clientName: 'Артем', clientNumber: 8, masterId: 3, serviceId: 2, time: '15,15', date: new Date(), createdAt: new Date(), updatedAt: new Date(),
       },
+      {
+        clientName: 'Андрей', clientNumber: 10, masterId: 6, serviceId: 2, time: '15,15', date: new Date(), createdAt: new Date(), updatedAt: new Date(),
+      },
     ]);
   },
 
