@@ -18,6 +18,7 @@ import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
 import Profile from "./components/Profile/Profile"
 import AdminMasters from './components/AdminMasters/AdminMasters.jsx';
+import AdminReview from './components/AdminReview/AdminReview.jsx';
 
 import { useDispatch } from "react-redux";
 
@@ -73,6 +74,10 @@ function App() {
 
         <Route exact path="/adminmasters">
           <AdminMasters />
+        </Route>
+
+        <Route exact path="/adminreview">
+          <AdminReview />
         </Route>
 
         <Route exact path="/signup">
