@@ -8,39 +8,30 @@ function AdminMasters(props) {
   const priceInput = useRef();
   const masterCategory = useRef();
 const [correctForm, setCorrectForm] = useState(false);
-const { masters } = useSelector(state => state.mastersReducer)
+const { allMasters } = useSelector(state => state.mastersReducer)
 function deleteMaster(event, id) {
-  dispatch({ type: 'DELETE_USER', payload: {id}})
+  console.log(id, 'idet');
+  dispatch({ type: 'DELETE_MASTER', payload: {id}})
 }
 const dispatch = useDispatch()
   useEffect(() => {
-    dispatch({ type: 'GET_FETCH_MASTERS' })
+    dispatch({ type: 'ALL_MASTERS_FETCH' })
   }, [dispatch])
-  console.log();
+  console.log(allMasters);
   return (
     <div>
       <Link to="/admincabinet">Назад</Link>
       <div>
-      {masters.map(master => 
+      <div>Добавить Мастера</div>
+      {allMasters.length > 0 && allMasters.map(master => 
       <div key={master.id}>
-        {correctForm ?
-          <div>
-            Имя Мастера: <input ref={mesterName} defaultValue={master.name}/>
-            {/* Категория: <input ref={priceInput} defaultValue={master.price} /> */}
-            Категория: <input ref={masterCategory} defaultValue={master.category} />
-            <button onClick={(event) => deleteMaster(event, master.id)}>Удалить Мастера</button>
-            <button onClick={() => setCorrectForm(!correctForm)}>Внести Изменения</button>
-          </div>  
-          :
-          <div>
             <div>
-            Имя Мастера: {master.Name}
+            Имя Мастера: {master.name}
             {/* Категория: <input ref={priceInput} defaultValue={master.price} /> */}
             Сервисы: {master.category}
-            <button onClick={() => setCorrectForm(!correctForm)}>Редактировать</button>
-          </div> 
-          </div>
-        }
+            Описание: {}
+            <button onClick={(event) => deleteMaster(event, master.id)}>Удалить Мастера</button>
+            </div> 
       </div>)
       }
       </div>

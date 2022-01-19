@@ -13,15 +13,18 @@ function AdminCabinet(props) {
   useEffect(() => {
     dispatch({ type: 'ADMIN_RESERVATIONS_FETCH' })
   }, [dispatch])
-  console.log(reservations);
+  // console.log(reservations);
   return (
     <div>
       <Link to="/admincabinet">Личный кабинет</Link>
       <Link to="/adminreview">Отзывы</Link>
+      <Link to="/adminmasters">Мастера</Link>
+      <Link to="/adminchangepass">Изменить пароль</Link>
+
 
       {/* <Link to="/adminmasters">Мастера</Link> */}
       <div>
-      {reservations.map(reservation => <AdminReservations key={reservation.id} id={reservation.id} />)}
+        {reservations.map(reservation => <AdminReservations key={reservation.id} id={reservation.id} />)}
       </div>
     </div>
   );
