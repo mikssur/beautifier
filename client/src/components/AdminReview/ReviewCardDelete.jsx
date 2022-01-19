@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './Review.css'
 
 
 function ReviewCard({ name, text, isValid, id }) {
@@ -14,17 +13,17 @@ function ReviewCard({ name, text, isValid, id }) {
   console.log('REVIEWID V REVIEWCARD NACHALO', id)
   return (
     <>
-      {isValid ?
-        <li className="review-card">
-          <h3 className="review-author">{name}</h3>
-          <p className="review-text">{text}</p>
+      {/* {isValid ? */}
+        <li>
+          <p>{name}</p>
+          <p>{text}</p>
         </li> :
-        null}
-        {/* <Link to={`/reviews`}> */ }
-        {/* <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button> */}
+        {/* null} */}
+        {/* <Link to={`/adminreview`}> */}
+        <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
         {/* </Link> */}
     </>
-);
+  );
 }
 
 export default ReviewCard;
