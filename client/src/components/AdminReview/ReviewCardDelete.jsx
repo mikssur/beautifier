@@ -13,17 +13,17 @@ function ReviewCard({ name, text, isValid, id }) {
   console.log('REVIEWID V REVIEWCARD NACHALO', id)
   return (
     <>
-      {isValid ?
+      {/* {isValid ? */}
         <li>
           <p>{name}</p>
           <p>{text}</p>
         </li> :
-        null}
-        {/* <Link to={`/reviews`}> */ }
-        {/* <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button> */}
+        {/* null} */}
+        {/* <Link to={`/adminreview`}> */}
+        <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
         {/* </Link> */}
     </>
-);
+  );
 }
 
 export default ReviewCard;
