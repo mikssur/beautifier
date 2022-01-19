@@ -33,6 +33,7 @@ function SignIn(props) {
     <>
       {!session.authClient ?
         <div className="login-form">
+          <h2>Войти</h2>
           <input ref={clientTelInput} type="tel" name="" id="clientTell" placeholder="Телефон" required />
           <input ref={clientPassInput} type="password" name="" id="clientPass" placeholder="Пароль" required />
           <button onClick={(event) => clientFormHandler(event, clientPassInput, clientTelInput)}>Авторизироваться</button>

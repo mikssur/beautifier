@@ -1,3 +1,9 @@
+.promo-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .promo-photos {
   display: flex;
   flex-wrap: wrap;

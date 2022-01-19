@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { gettFetchServicesAC } from '../../redux/actionCreators/servicesAC';
 
+import '../Categories/Categories.css'
+
 
 function Category({ category }) {
   const dispatch = useDispatch()
@@ -21,12 +23,12 @@ function Category({ category }) {
   // }
 
   return (
-    <>
+    <div className="category">
       <Link to={`/categories/${categoryname}`}>
-        <li onClick={() => dispatch({ type: 'GET_FETCH_SERVICES', payload: { id } })} size="small">{categoryname}</li>
+        <h4 onClick={() => dispatch({ type: 'GET_FETCH_SERVICES', payload: { id } })} size="small">{categoryname}</h4>
+        <img src={picture} alt="category-img" />
       </Link>
-      <img style={{width: '150px', height: '170px'}} src={picture} alt="" />
-    </>
+    </div>
   );
 }
 

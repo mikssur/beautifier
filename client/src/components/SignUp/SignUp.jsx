@@ -39,6 +39,7 @@ function SignUp(props) {
     <>
       {!session.authClient ?
         <div className="sign-up-form">
+          <h2>Регистрация</h2>
           <input ref={clientLoginInput} type="text" name="" id="clientLogin" placeholder="Имя" required/>
           <input ref={clientPassInput} type="password" name="" id="clientPass" placeholder="Пароль" required />
           <input ref={clientTelInput} type="tel" name="" id="clientTell" placeholder="Телефон" required />
