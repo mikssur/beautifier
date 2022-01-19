@@ -18,6 +18,7 @@ function AdminCabinet(props) {
     <div>
       <Link to="/admincabinet">Личный кабинет</Link>
       <Link to="/adminreview">Отзывы</Link>
+      <Link to="/adminmasters">Мастера</Link>
       <Link to="/adminchangepass">Изменить пароль</Link>
 
 
