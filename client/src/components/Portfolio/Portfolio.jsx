@@ -15,7 +15,7 @@ function Portfolio(props) {
 
   return (
 
-    <>
+    <div className="portfolio-block">
       <h2>Портфолио</h2>
       <div className="portfolio-body">
         {masters.map(el => {
@@ -32,7 +32,7 @@ function Portfolio(props) {
         })}</div>
 
 
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,12 @@
+.portfolio-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .portfolio-body {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
