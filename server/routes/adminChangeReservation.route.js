@@ -6,7 +6,7 @@ router.route('/')
     const {
       id, clientName, clientNumber, masterId, serviceId,
     } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const updatedTable = await Reservation.update(
       {
         clientName,
