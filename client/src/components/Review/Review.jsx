@@ -26,6 +26,7 @@ function Review(props) {
 
   return (
     <>
+      <h1>Reviews</h1>
       <div className="review-body">
         {reviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} isValid={review.isValid} />)}
       </div>

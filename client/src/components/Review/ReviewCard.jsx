@@ -6,7 +6,7 @@ function ReviewCard({ name, text, isValid }) {
     <>
       {isValid ?
         <li className="review-card">
-          <p className="review-author">{name}</p>
+          <h3 className="review-author">{name}</h3>
           <p className="review-text">{text}</p>
         </li> :
         null}
