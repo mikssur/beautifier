@@ -18,8 +18,7 @@ function AdminCabinet(props) {
     <div>
       <Link to="/admincabinet">Личный кабинет</Link>
       <Link to="/adminreview">Отзывы</Link>
-
-      {/* <Link to="/adminmasters">Мастера</Link> */}
+      <Link to="/adminmasters">Мастера</Link>
       <div>
       {reservations.map(reservation => <AdminReservations key={reservation.id} id={reservation.id} />)}
       </div>

@@ -13,8 +13,9 @@ import { reservationCategories } from './sagas/reservationCategoriesSaga';
 import { sessionWatcher } from './sagas/sessionSaga'
 import { cabinetWatcher } from './sagas/cabinetSaga';
 import { adminReservationChangeWatcher } from './sagas/adminReservationChangeSaga';
-import { deleteUserWatcher } from './sagas/deleteUserSaga'
-
+import { deleteUserWatcher } from './sagas/deleteUserSaga';
+import { allMastersWatcher } from './sagas/allMastersSaga'
+import { deleteMasterWatcher } from './sagas/adminDeleteMasterSaga';
 const sagaMiddleware = createSagaMiddleware()
 
 // sagaMiddleware.run(myWatcher)
@@ -31,5 +32,8 @@ sagaMiddleware.run(sessionWatcher)
 sagaMiddleware.run(cabinetWatcher)
 sagaMiddleware.run(adminReservationChangeWatcher)
 sagaMiddleware.run(deleteUserWatcher)
+sagaMiddleware.run(allMastersWatcher)
+sagaMiddleware.run(deleteMasterWatcher)
+
 
 
