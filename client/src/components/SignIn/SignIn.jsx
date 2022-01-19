@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import './SignIn.css';
 
 function SignIn(props) {
   const dispatch = useDispatch();
@@ -31,9 +32,9 @@ function SignIn(props) {
   return (
     <>
       {!session.authClient ?
-        <div>
-          Телефон:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
-          Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
+        <div className="login-form">
+          <input ref={clientTelInput} type="tel" name="" id="clientTell" placeholder="Телефон" required />
+          <input ref={clientPassInput} type="password" name="" id="clientPass" placeholder="Пароль" required />
           <button onClick={(event) => clientFormHandler(event, clientPassInput, clientTelInput)}>Авторизироваться</button>
         </div>
         : <p> Авторизация прошла успешно </p>}

@@ -1,0 +1,27 @@
+.main-nav {
+  display: flex;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.main-nav a:hover {
+  color: rgb(121, 181, 32);
+}
+
+.main-nav li {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding: 0;
+}

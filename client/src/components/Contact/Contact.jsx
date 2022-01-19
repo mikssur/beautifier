@@ -1,12 +1,12 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
-
+import './Contact.css';
 
 function Contact(props) {
-  const coordinates = [59.927310, 30.350840];
-
+  const coordinates = [59.927310, 30.350840];  
   return (
     <>
+<div className="footer">
       <ul>
         <li>АДРЕС: КУЗНЕЦОВСКИЙ ПЕРЕУЛОК 5/2</li>
         <li>ТЕЛЕФОН: +7-XXX-XXX-XXX</li>
@@ -17,6 +17,7 @@ function Contact(props) {
           <Placemark geometry={coordinates} />
         </Map>
       </YMaps>
+      </div>
     </>
   );
 }

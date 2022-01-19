@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 
+import './Review.css';
+
 function AddReviewForm({ setNewReview }) {
 
   const [name, setName] = useState('');

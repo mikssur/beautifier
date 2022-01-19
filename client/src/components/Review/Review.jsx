@@ -5,6 +5,8 @@ import { initReviewsAC } from '../../redux/actionCreators/reviewsAC/reviewsAC';
 import AddReviewForm from './AddReviewForm';
 import ReviewCard from './ReviewCard';
 
+import './Review.css';
+
 
 function Review(props) {
 
@@ -23,13 +25,13 @@ function Review(props) {
   }, [])
 
   return (
-    <div>
-      <ul>
+    <div className="review-block">
+      <h1>Reviews</h1>
+      <div className="review-body">
         {reviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} isValid={review.isValid} />)}
-      </ul>
+      </div>
       {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>}
     </div>
-
   );
 }
 
