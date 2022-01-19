@@ -14,12 +14,13 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
 
   switch (action.type) {
     case 'INIT_RESERVATION_CATEGORIES':
-      const categories = action.payload
+      const categories = action.payload;
+
       return { ...state, reservationCategories: categories };
 
     case 'INIT_RESERVATION_SERVICES':
       const services = action.payload
-      return { ...state, reservationServices: services };
+      return { ...state, reservationServices: services, reservationMasters: [] };
 
     case 'INIT_RESERVATION_MASTERS':
       const { masters } = action.payload;
@@ -32,7 +33,7 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
       copyMasters = masters;
       copyServiceId = serviceId
 
-      return { ...state, reservationMasters: copyMasters, reservationServiceId: copyServiceId };
+      return { ...state, reservationMasters: copyMasters, reservationServiceId: copyServiceId, };
 
     case 'ADD_RESERVATION_MASTER':
       const masterId = action.payload
