@@ -15,11 +15,11 @@ const adminAuthFetch = async ({ login, pass }) => {
 }
 
 function* fetchAdminAuth(action) {
-  const reservations = yield call(adminAuthFetch, {
+  const session = yield call(adminAuthFetch, {
     login: action.payload.login,
     pass: action.payload.pass
   });
-  yield put({ type: "INIT_RESERVATIONS", payload: reservations });
+  yield put({ type: "INIT_SESSION", payload: { session } });
 }
 
 
