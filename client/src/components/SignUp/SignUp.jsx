@@ -2,6 +2,8 @@ import React from 'react';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import './SignUp.css';
+
 function SignUp(props) {
   const dispatch = useDispatch();
   const clientLoginInput = useRef();
@@ -36,10 +38,10 @@ function SignUp(props) {
   return (
     <>
       {!session.authClient ?
-        <div>
-          Имя:<input ref={clientLoginInput} type="text" name="" id="clientLogin" />
-          Пароль:<input ref={clientPassInput} type="password" name="" id="clientPass" />
-          Телефон:<input ref={clientTelInput} type="tel" name="" id="clientTell" />
+        <div className="sign-up-form">
+          <input ref={clientLoginInput} type="text" name="" id="clientLogin" placeholder="Имя" required/>
+          <input ref={clientPassInput} type="password" name="" id="clientPass" placeholder="Пароль" required />
+          <input ref={clientTelInput} type="tel" name="" id="clientTell" placeholder="Телефон" required />
           <button onClick={(event) => clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput)}>Зарегистрироваться</button>
         </div>
         : <p> Регистрация прошла успешно </p>}
