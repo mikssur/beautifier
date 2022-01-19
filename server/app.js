@@ -34,6 +34,7 @@ const adminDeleteUser = require('./routes/adminDeleteUser.route');
 const resDelete = require('./routes/resDelete.route');
 const adminAllMasters = require('./routes/adminAllMasters.route');
 const adminDeleteMaster = require('./routes/adminDeleteMaster.route');
+const adminPassChange = require('./routes/AdminPassChange.router');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -81,6 +82,7 @@ app.use('/deleteuser', adminDeleteUser);
 app.use('/deleteres', resDelete);
 app.use('/allmasters', adminAllMasters);
 app.use('/deletemaster', adminDeleteMaster);
+app.use('/adminpasschange', adminPassChange);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

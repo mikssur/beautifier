@@ -1,0 +1,25 @@
+.interior-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interior-photos-1-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.interior-photos-1-row img {
+  width: 30vw;
+  margin: 5px;
+}
+
+.interior-photos-2-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.interior-photos-2-row img {
+  width: 40vw;
+  margin: 5px;
+}

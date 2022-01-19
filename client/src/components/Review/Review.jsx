@@ -5,14 +5,18 @@ import { initReviewsAC } from '../../redux/actionCreators/reviewsAC/reviewsAC';
 import AddReviewForm from './AddReviewForm';
 import ReviewCard from './ReviewCard';
 
+import './Review.css';
+
 
 function Review(props) {
 
-  const [newReview, setNewReview] = useState(false);
+  // const [newReview, setNewReview] = useState(false);
   const [newDate, setNewDate] = useState('')
 
   const dispatch = useDispatch()
   const { reviews } = useSelector(state => state.reviewsReducer)
+  const newReviews = reviews.filter((el) => el.isValid !== false)
+
 
   useEffect(() => {
     (async () => {
@@ -20,16 +24,24 @@ function Review(props) {
       const res = await response.json();
       dispatch(initReviewsAC({ res }))
     })();
-  }, [])
+  }, [dispatch])
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await fetch(`/reviews`)
+  //     const res = await response.json();
+  //     dispatch(initReviewsAC({ res }))
+  //   })();
+  // }, [newReview])
 
   return (
-    <div>
-      <ul>
-        {reviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} isValid={review.isValid} />)}
-      </ul>
-      {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>}
+    <div className="review-block">
+      <div className="review-body">
+        {newReviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />)}
+      </div>
+      <AddReviewForm />
+      {/* {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>} */}
     </div>
-
   );
 }
 
