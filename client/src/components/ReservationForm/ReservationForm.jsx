@@ -54,23 +54,24 @@ function ReservationForm() {
   }
 
   return (
-    <form onSubmit={newDatee}>
-      <span>Выберите день: </span>
-      <input name='Date' type="date" onChange={getFreeTime} min={nowDate} />
-      <br />
-      <span>Свободное время: </span>
-      <select name="time" >
-        {freeTime ? freeTime.map(el => <FreeTime key={el} el={el} />) : null}
-      </select>
-      <br />
-      <span>Ваше имя:</span>
-      <input name='clientName' type="text" />
-      <br />
-      <span>Ваше номер телефона:</span>
-      <input name='clientNumber' type="text" />
-      <br />
-      <input type="submit" />
-    </form>
+      <form onSubmit={newDatee}>
+        <span>Выберите день: </span>
+        <input name='Date' type="date" onChange={getFreeTime} min={nowDate} />
+        <br />
+        <span>Свободное время: </span>
+        <select name="time" >
+          {freeTime ? freeTime.map(el => <FreeTime key={el} el={el} />) : null}
+        </select>
+        <br />
+        <span>Ваше имя:</span>
+        <input name='clientName' type="text" />
+        <br />
+        <span>Ваше номер телефона:</span>
+        <input name='clientNumber' type="tel"
+          placeholder="+79123456789" />
+        <br />
+        <input type="submit" />
+      </form>
   );
 }
 

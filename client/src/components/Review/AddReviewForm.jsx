@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 //import { ADD_REVIEW } from '../../redux/actionTypes/reviewsAT/reviewsAT';
 
 // { setNewReview }
+import './Review.css';
+
 export function AddReviewForm() {
   const dispatch = useDispatch()
-
 
   const [name, setName] = useState('');
   const [text, setText] = useState('');
