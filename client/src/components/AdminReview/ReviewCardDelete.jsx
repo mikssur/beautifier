@@ -1,7 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-
 
 function ReviewCard({ name, text, isValid, id }) {
   const dispatch = useDispatch()
@@ -15,13 +13,14 @@ function ReviewCard({ name, text, isValid, id }) {
     <>
       {/* {isValid ? */}
         <li>
-          <p>{name}</p>
+          <h3>{name}</h3>
           <p>{text}</p>
-        </li> :
+        
         {/* null} */}
         {/* <Link to={`/adminreview`}> */}
         <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
         {/* </Link> */}
+        </li>
     </>
   );
 }

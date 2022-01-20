@@ -2,7 +2,10 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { initReviewsAC } from '../../redux/actionCreators/reviewsAC/reviewsAC';
+import { Link } from 'react-router-dom';
 import ReviewCardDelete from './ReviewCardDelete';
+
+import './AdminReview.css';
 
 function AdminReview(props) {
 
@@ -24,14 +27,18 @@ function AdminReview(props) {
 
 
   return (
-    <div>
-      <ul>
-        {newReviews.length ? newReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <>No Reviews</> }
-      </ul>
-        <p>Проверить</p>
+    <div className="admin-reviews-block">
+      <Link to="/admincabinet">Назад</Link>
+      <h2>Отзывы</h2>
+      <div className="admin-reviews">
         <ul>
-      {falseReviews.length ? falseReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <>No Reviews</> }
+          {newReviews.length ? newReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <>No Reviews</> }
         </ul>
+          <p>Проверить</p>
+        <ul>
+          {falseReviews.length ? falseReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <>No Reviews</> }
+        </ul>
+      </div>
       {/* {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>} */}
     </div>
   );
