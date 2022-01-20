@@ -15,8 +15,13 @@ export const cabinetReducer = (state = initialState, action) => {
       return { ...state, reservation: copyReservation }
     }
     case 'DELETE_RESERVATION': {
-      const copyReservation = { ...state.reservation };
-      copyReservation.reservations = action.payload;
+      const copyReservation = {
+        ...state.reservation,
+        reservations: state.reservation.reservations // чтобы не мутировать исходный массив сплайсом
+      };
+      const id = action.payload;
+      const index = copyReservation.reservations.findIndex(reservation => reservation.id === id);
+      copyReservation.reservations.splice(index, 1); // применение мутирующего метода сплайс
 
       return { ...state, reservation: copyReservation }
     }

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import './Reservation.css';
 
-function ReservationServices({ name, id }) {
+function ReservationServices({ name, id, price }) {
 
 
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ function ReservationServices({ name, id }) {
 
   return (
     <div>
-      <span onClick={getMasters}>{name}</span>
+      <p><a onClick={getMasters}><strong>{name}</strong></a></p>
+      <p>{price}p.</p>
     </div>
   );
 }

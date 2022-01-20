@@ -14,7 +14,7 @@ function Service({ service }) {
   console.log('URLURLURLURL V KOMPONENTE SERVICE', currentURL, service)
   return (
     <>
-      <Link to={`${currentURL}/${servicename}`}>
+      <Link to={`/categories/:categoryname/${servicename}/${id}`}>
         <li onClick={() => dispatch({ type: 'GET_FETCH_MASTERS', payload: { id } })} size="small">{service.name}</li>
       </Link>
       <div>Description: {service.description} </div>

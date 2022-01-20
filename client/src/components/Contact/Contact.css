@@ -11,6 +11,7 @@
   background-color: rgb(31, 31, 31);
   margin: 50px 0 0 0;
   color: white;
+  overflow: hidden;
 }
 
 .footer ul {
@@ -49,6 +50,9 @@
 
 .footer-content-row-3 {
   position: relative;
+  width: 100vw;
+  height: 0;
+  z-index: 1;
 }
 
 .footer-logo {
@@ -56,6 +60,8 @@
   bottom: -28px;
   font-size: 100px;
   margin: 0;
+  padding: 0;
+  z-index: 2;
 }
 
 .contacts li {

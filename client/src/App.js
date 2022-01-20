@@ -44,11 +44,11 @@ function App() {
           <Categories />
         </Route>
 
-        <Route exact path="/categories/:categoryname">
+        <Route exact path="/categories/:categoryname/:id">
           <ServiceList />
         </Route>
 
-        <Route exact path="/categories/:categoryname/:service">
+        <Route exact path="/categories/:categoryname/:service/:id">
           <MasterList />
         </Route>
 
