@@ -4,7 +4,6 @@
 }
 
 .main-nav a {
-  text-decoration: none;
   color: black;
   text-transform: uppercase;
   transition: .2s;
@@ -12,7 +11,7 @@
 }
 
 .main-nav a:hover {
-  color: rgb(121, 181, 32);
+  color: #48bf48;
 }
 
 .main-nav li {

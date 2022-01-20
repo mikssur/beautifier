@@ -25,7 +25,7 @@ function ReservationServices({ name, id, price }) {
 
   return (
     <div>
-      <p><a onClick={getMasters}><strong>{name}</strong></a></p>
+      <p><a onClick={getMasters}>{name}</a></p>
       <p>{price}p.</p>
     </div>
   );

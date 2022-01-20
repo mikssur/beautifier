@@ -28,6 +28,7 @@ h3 {
 
 .reserv-category, .reserv-services, .reserv-masters {
   width: 20vw;
+  padding: 20px;
 }
 
 .reservation-row-2{
