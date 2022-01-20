@@ -7,3 +7,7 @@
 #clientTell, #clientPass {
   margin: 5px 0 0 0;
 }
+
+.misha {
+  visibility: hidden;
+}

@@ -55,6 +55,7 @@ app.use(session(sessionConfig));
 app.use(sessionMiddleware);
 app.use(cors({
   credentials: true,
+  origin: 'http://localhost:3000',
 }));
 
 app.use('/reviews', reviewsRoute);
