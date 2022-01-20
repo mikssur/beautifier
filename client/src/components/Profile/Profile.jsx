@@ -11,21 +11,21 @@ function Profile(props) {
   }, [dispatch])
 
   async function deleteRes(event) {
-    const reservantionId = event.target.id;
+    const reservationId = event.target.id;
     const response = await fetch(`/deleteres`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'Application/json' },
       body: JSON.stringify({
-        id: reservantionId,
+        id: reservationId,
       })
     })
     const reservations = await response.json()
-
-    dispatch({type: 'DELETE_RESERVATION', payload: reservations})
+    // window.location.href = '/profile';
+    dispatch({ type: 'DELETE_RESERVATION', payload: reservationId })
   }
   return (
     <div>
-      {reservations ?
+      {reservations.length > 0 ?
         reservations.map(el => {
           return <><div key={el.id}>
             <p>{el.clientName}</p>
@@ -41,7 +41,7 @@ function Profile(props) {
               }
             })}
             <button id={el.id} onClick={(event) => deleteRes(event)}>Удалить запись</button></div></>
-        }) : <p>Записи отсутствуют</p>
+        }) : <p>Записи отсутствуют! :(</p>
       }     </div>
   );
 }
