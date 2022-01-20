@@ -1,6 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 
-const adminReservationChangeFetch = async ({ id, clientName, clientNumber, masterId, serviceId }) => {
+const adminReservationChangeFetch = async ({ id, clientName, clientNumber, master, service, date, time }) => {
+  console.log('dsvdsvdsvfsadfhfsdh', id, clientName, clientNumber, master, service, date, time);
   const response = await fetch(`/adminchangereservation`, {
     method: 'POST',
     headers: { 'Content-Type': 'Application/json' },
@@ -8,13 +9,15 @@ const adminReservationChangeFetch = async ({ id, clientName, clientNumber, maste
       id,
       clientName,
       clientNumber,
-      masterId,
-      serviceId
+      master,
+      service,
+      date,
+      time,
     })
   })
-  console.log("AdminChangeReservation");
-  const reservations = await response.json()
-  return reservations
+
+  const reservations = await response.json();
+  return reservations;
 }
 
 function* fetchAdminReservationChange(action) {
@@ -22,8 +25,11 @@ function* fetchAdminReservationChange(action) {
     id: action.payload.id,
     clientName: action.payload.clientName,
     clientNumber: action.payload.clientNumber,
-    masterId: action.payload.masterId,
-    serviceId: action.payload.serviceId,
+    master: action.payload.master,
+    service: action.payload.service,
+    date: action.payload.date,
+    time: action.payload.time,
+
   });
   yield put({ type: "INIT_RESERVATIONS", payload: reservations });
 }

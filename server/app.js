@@ -35,6 +35,7 @@ const resDelete = require('./routes/resDelete.route');
 const adminAllMasters = require('./routes/adminAllMasters.route');
 const adminDeleteMaster = require('./routes/adminDeleteMaster.route');
 const adminPassChange = require('./routes/AdminPassChange.router');
+const adminCabinet = require('./routes/adminCabinet.router');
 const editReviewRouter = require('./routes/editreview.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
@@ -85,6 +86,7 @@ app.use('/deleteres', resDelete);
 app.use('/allmasters', adminAllMasters);
 app.use('/deletemaster', adminDeleteMaster);
 app.use('/adminpasschange', adminPassChange);
+app.use('/masters_services', adminCabinet);
 app.use('/editreview', editReviewRouter);
 
 app.listen(PORT, () => {
