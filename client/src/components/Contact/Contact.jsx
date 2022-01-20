@@ -18,19 +18,19 @@ function Contact(props) {
             <h3>Меню</h3>
             <ul className="footer-nav">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Главная</Link>
               </li>
               <li>
-                <Link to="/categories">Categories</Link>
+                <Link to="/categories">Категории</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/about">О нас</Link>
               </li>
               <li>
-                <Link to="/reviews">Review</Link>
+                <Link to="/reviews">Отзывы</Link>
               </li>
               <li>
-                <Link to="/portfolio">Portfolio</Link>
+                <Link to="/portfolio">Мастера</Link>
               </li>
               <li>
                 <Link to="/reservation">Записаться</Link>

@@ -14,14 +14,16 @@ router.route('/')
     if (!checkClient) {
       res.status(401).json({
         message: 'Такой пользователь не существует!',
-        authUser: false,
+        clientExist: false,
       });
     } else {
       const isCorrectPassword = await bcrypt.compare(password, checkClient.password);
+      console.log(isCorrectPassword, 'correct pas');
       if (!isCorrectPassword) {
+        console.log(checkClient, 'hiii therereweiowper');
         res.status(401).json({
           message: 'Пароль введен неправильно!',
-          authUser: false,
+          correctPassword: false,
         });
         return;
       }
@@ -34,10 +36,7 @@ router.route('/')
         isAdmin: false,
       };
 
-      res.json({
-        message: 'Авторизация прошла успешна!',
-        authUser: true,
-      });
+      res.json({ message: 'Авторизация прошла успешна!' });
     }
   });
 

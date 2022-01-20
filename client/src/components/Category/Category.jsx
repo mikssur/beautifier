@@ -24,7 +24,7 @@ function Category({ category }) {
 
   return (
     <div className="category">
-      <Link to={`/categories/${categoryname}`}>
+      <Link to={`/categories/${categoryname}/${id}`}>
         <h4 onClick={() => dispatch({ type: 'GET_FETCH_SERVICES', payload: { id } })} size="small">{categoryname}</h4>
         <img src={picture} alt="category-img" />
       </Link>

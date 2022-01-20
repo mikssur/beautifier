@@ -36,6 +36,7 @@ const adminAllMasters = require('./routes/adminAllMasters.route');
 const adminDeleteMaster = require('./routes/adminDeleteMaster.route');
 const adminPassChange = require('./routes/AdminPassChange.router');
 const adminCabinet = require('./routes/adminCabinet.router');
+const editReviewRouter = require('./routes/editreview.route');
 
 const sessionMiddleware = require('./middlewares/sessions');
 
@@ -59,6 +60,7 @@ app.use(session(sessionConfig));
 app.use(sessionMiddleware);
 app.use(cors({
   credentials: true,
+  origin: 'http://localhost:3000',
 }));
 
 app.use('/reviews', reviewsRoute);
@@ -85,6 +87,7 @@ app.use('/allmasters', adminAllMasters);
 app.use('/deletemaster', adminDeleteMaster);
 app.use('/adminpasschange', adminPassChange);
 app.use('/masters_services', adminCabinet);
+app.use('/editreview', editReviewRouter);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

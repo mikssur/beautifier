@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
+import './AdminMasters.css';
+
 function AdminMasters(props) {
   const mesterName = useRef();
   const priceInput = useRef();
@@ -19,17 +21,22 @@ const dispatch = useDispatch()
   }, [dispatch])
   console.log(allMasters);
   return (
-    <div>
-      <Link to="/admincabinet">Назад</Link>
-      <div>
-      <div>Добавить Мастера</div>
+    <div className="admin-masters-block">
+      <h2>Мастера</h2>
+      <div className="admin-menu">
+        <Link to="/admincabinet">Личный кабинет</Link>
+        <Link to="/adminreview">Отзывы</Link>
+        <Link to="/adminmasters">Мастера</Link>
+        <Link to="/adminchangepass">Изменить пароль</Link>
+      </div>
+      <div className="admin-masters">
       {allMasters.length > 0 && allMasters.map(master => 
-      <div key={master.id}>
+      <div className="admin-master-item" key={master.id}>
             <div>
-            Имя Мастера: {master.name}
+            <p>Имя Мастера: {master.name}</p>
             {/* Категория: <input ref={priceInput} defaultValue={master.price} /> */}
-            Сервисы: {master.category}
-            Описание: {}
+            <p>Сервисы: {master.category}</p>
+            <p>Описание: {}</p>
             <button onClick={(event) => deleteMaster(event, master.id)}>Удалить Мастера</button>
             </div> 
       </div>)

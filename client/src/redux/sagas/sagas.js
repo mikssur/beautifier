@@ -84,6 +84,25 @@ const fetchApproveReview = async ({id}) => {
   return review
 }
 
+const fetchEditReview = async ({obj}) => {
+  console.log('OBJ V SAGAH FETCH REVIEW OBBBJJJJJJ CHTO PEREDAJETSYA', obj)
+  // const name = obj.name
+  //const id = obj.id
+
+  const response = await fetch(`/editreview`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'Application/json' },
+    body: JSON.stringify({
+      obj,
+    })
+  })
+  console.log("addReview response", response);
+  const review = await response.json()
+  // const id = review.id
+  console.log('RV SAGAH REVIEW AAAADDDDDDDDDDDDD', review)
+  return review
+}
+
 
 function* getFetchCategories() {
   console.log('GETFETCH FUNCTION')
@@ -131,6 +150,13 @@ function* getApproveFetchReview(action) {
   console.log(review, 'REVIEWWWWWWWWWWWWWWW')
   yield put({ type: 'CHANGE_STATUS_REVIEW', payload: { review } })
 }
+
+function* getEditFetchReview(action) {
+  console.log('101010011001010010101PAYLOAD', action.payload)
+  const review = yield call(fetchEditReview, {obj: action.payload})
+  console.log(review, 'REVIEWWWWWWWWWWWWWWW')
+  yield put({ type: 'UPDATE_REVIEW', payload: { review } })
+}
 // // наблюдатель (watcher) типа действия + какой исполнитель будет работать
 export function* mySaga() {
   console.log('SAGA WATCHER')
@@ -142,6 +168,7 @@ export function* mySaga() {
   yield takeEvery("DELETE_FETCH_REVIEW", deleteFetchReview);
   yield takeEvery("ADD_FETCH_REVIEW", addFetchReview);
   yield takeEvery("APPROVE_FETCH_REVIEW", getApproveFetchReview);
+  yield takeEvery("EDIT_FETCH_REVIEW", getEditFetchReview);
 }
 
 export default mySaga;

@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
 import { time } from '../../helpers/time'
+import './AdminReservations.css';
 
-function Reservations({ id }) {
+
+
+
+function Reservations({id}) {
   const clientNameInput = useRef();
   const serviceInput = useRef();
   const numberInput = useRef();
@@ -48,42 +52,41 @@ function Reservations({ id }) {
   }, [])
 
   return (
-    <div>
-      {correctForm ?
-        <div>
-          Имя: <input ref={clientNameInput} defaultValue={rightReservation.clientName} />
-          Номер телефона: <input ref={numberInput} defaultValue={rightReservation.clientNumber} />
-          <p>Изменить услугу:</p>
+    <div className="admin-reserv-item">
+      {correctForm ? 
+          <div>
+            <p><strong>Имя</strong>: <input ref={clientNameInput} defaultValue={rightReservation.clientName} /></p>
+            <p><strong>Номер телефона</strong>:  <input ref={numberInput} defaultValue={rightReservation.clientNumber} /></p>
+            <p><strong>Цена</strong>: <input ref={priceInput} defaultValue={rightReservation.price} /></p>
+            <p>Изменить услугу:</p>
           <select ref={serviceInput}>
-            {services.map(el => <option key={el.id}>{el.name}</option>)}
+            {services.map(el => <option key={el.id}>{el.name}, Цена: {el.price}</option>)}
           </select>
-          <p>Изменить мастера:</p>
+            <p>Изменить мастера:</p>
           <select ref={masterInput}>
             {masters.map(el => <option key={el.id}>{el.name}</option>)}
           </select>
-          <p>Изменить дату:</p>
+             <p>Изменить дату:</p>
           <input ref={dateInput} type="date" />
           <p>Изменить время:</p>
           <select ref={timeInput}>
             {time.map(el => <option key={el}>{el}</option>)}
           </select>
-
-          <button onClick={(event) => changeForm(event, id, clientNameInput, numberInput, masterInput, serviceInput, dateInput, timeInput)}>Внести Изменения</button>
+            <button onClick={(event) => changeForm(event, id, clientNameInput, numberInput, masterInput, serviceInput, dateInput, timeInput)}>Внести Изменения</button>
           <button onClick={() => setCorrectForm(!correctForm)}>Отмена</button>
-        </div>
-        :
-        <div key={rightReservation.clientName}>
-          Имя: <div>{rightReservation.clientName}</div>
-          Номер телефона: <div>{rightReservation.clientNumber}</div>
-          Услуга: <div>{rightReservation.serviceId}</div>
-          Цена: <div>{rightReservation.price}</div>
-          Мастер: <div>{rightReservation.masterId}</div>
-          Дата: <div>{rightReservation.date}</div>
-          Время: <div>{rightReservation.time}</div>
-
-          <button onClick={() => setCorrectForm(!correctForm)}>Редактировать</button>
-          <button onClick={(event) => deleteUser(event, id)}>Удалить</button>
-        </div>}
+          </div>
+          :
+          <div key={rightReservation.clientName}>
+            <strong>Имя</strong>: <div>{rightReservation.clientName}</div>
+            <strong>Номер телефона</strong>: <div>{rightReservation.clientNumber}</div>
+            <strong>Цена</strong>: <div>{rightReservation.price}</div>
+            <strong>Услуга</strong>: <div>{rightReservation.serviceId}</div>
+            <strong>Мастер</strong>: <div>{rightReservation.masterId}</div>
+            <strong>Дата</strong>: <div>{rightReservation.date}</div>
+            <strong>Время</strong>:  <div>{rightReservation.time}</div>
+            <button onClick={() => setCorrectForm(!correctForm)}>Редактировать</button>
+            <button onClick={(event) => deleteUser(event, id)}>Удалить</button>
+          </div>}
     </div>
   );
 }
