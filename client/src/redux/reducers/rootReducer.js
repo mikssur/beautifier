@@ -13,10 +13,14 @@ import reservationReducer from './reservationReducer'
 import { reservationCategoriesReducer } from './reservationCategoriesReducer';
 import sessionReducer from './sessionReducer'
 import cabinetReducer from './cabinetReducer'
+import signupReducer from './signupReducer';
+import signinReducer from './signinReducer';
+import clientReducer from './clientReducer';
+
 
 export const rootReducer = combineReducers({
   appReducer, reviewsReducer,
   portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, sessionReducer, reservationCategoriesReducer,
-  cabinetReducer
+  cabinetReducer, signupReducer, signinReducer, clientReducer
   // categoriesReducer,
 });
