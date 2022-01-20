@@ -14,14 +14,12 @@ router.route('/')
     if (findAdmin) {
       const isCorrectPassword = await bcrypt.compare(password, findAdmin.password);
       if (!isCorrectPassword) {
-        // res.status(401).json({
-        //   message: 'Пароль введен неправильно!',
-        //   authUser: false,
-        // })
-        // return;
         res.json({
+          answer: true,
+          checked: true,
+          checkAdmin: true,
+          checkPass: false,
           message: 'Не верный пароль',
-          authUser: false,
         });
       } else {
         req.session.user = {
@@ -31,7 +29,6 @@ router.route('/')
           signedUp: true,
           isAdmin: true,
         };
-
         res.json({
           authClient: true,
           isAdmin: true,
@@ -39,8 +36,11 @@ router.route('/')
       }
     }
     res.json({
+      answer: true,
+      checked: true,
+      checkAdmin: false,
+      checkPass: false,
       message: 'Не верный пользователь',
-      authUser: false,
     });
   });
 
