@@ -36,6 +36,7 @@ function SignIn(props) {
   }
   return (
     <>
+    <h2>Войти</h2>
       {!session.authClient ?
         <div className="login-form">
           <input ref={clientTelInput} type="tel" name="" id="clientTell" placeholder='Телефон' required />

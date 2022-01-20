@@ -5,23 +5,16 @@ import './About.css';
 function About() {
   return (
     <>
-      <div className="about-row-1">
-        <h1 className="about-header-1">О КОМПАНИИ BEAUTIFIER</h1>
-        <p className="about-desc-1">МЫ - ГАРАНТИЯ ВАШЕЙ НЕСТАНДАРТНОСТИ И КРАСОТЫ!</p>
-        <img src="https://www.dizainvfoto.ru/wp-content/uploads/2018/02/salon-krasoty-parikmaxerskaya-svetlyj-dizajn.jpg" />
-      </div>
-      <div className="about-row-2">
-        <h1 className="about-header-2">ПОДЧЕРКИВАЕМ ВАШУ ИНДИВИДУАЛЬНОСТЬ</h1>
-        <p className="about-desc-2">МЫ ПРЕДОСТАВЛЯЕМ УСЛУГИ НОГТЕВОГО СЕРВИСА А ТАКЖЕ КОСМЕТИЧЕСКИЕ ПРОЦЕДУРЫ.</p>
-        <img src="https://www.dizainvfoto.ru/wp-content/uploads/2018/02/salon-krasoty-parikmaxerskaya-svetlyj-dizajn.jpg" />
-      </div>
-      <div className="about-row-3">
-        <h1 className="about-header-3">НАША ФИЛОСОФИЯ</h1>
+      <div className="about-block">
         <div className="about-text">
-          <p className="about-desc-3">ЦЕЛЬ BEAUTIFIER - РАСКРЫВАТЬ НЕСТАНДАРТНОСТЬ И ИНДИВИДУАЛЬНОСТЬ ВНЕШНЕГО ВИДА КАЖДОГО ПОСЕТИТЕЛЯ.</p>
-          <p className="about-desc-3">ЖЕЛАНИЯ КАЖДОГО ГОСТЯ МЫ ВОПЛОЩАЕМ В ВЫСОКОМ КЛАССЕ ИСПОЛНЕНИЯ.</p>
-          <p className="about-desc-3">НАШИ КВАЛИФИЦИРОВАННЫЕ СПЕЦИАЛИСТЫ ОКАЗЫВАЮТ УСЛУГИ ВЫСОКОГО КАЧЕСТВА С ПРИМЕНЕНИЕМ ПРОФЕССИОНАЛЬНОЙ КОСМЕТИКИ ЭЛИТНЫХ ПРОИЗВОДИТЕЛЕЙ.</p>
-          <p className="about-desc-3">МЫ ОБРАЩАЕМ ВНИМАНИЕ НА ДЕТАЛИ И ПОЛНОСТЬЮ ОТВЕЧАЕМ ЗА РЕЗУЛЬТАТ.</p>
+          <h2>Наша философия</h2>
+          <p >Цель beautifier - раскрывать нестандартность и индивидуальность внешнего вида каждого посетителя.</p>
+          <p >Желания каждого гостя мы воплощаем в высоком классе исполнения.</p>
+          <p >Наши квалифицированные специалисты оказывают услуги высокого качества с применением профессиональной косметики элитных производителей.</p>
+          <p >Мы обращаем внимание на детали и полностью отвечаем за результат.</p>
+        </div>
+        <div className="about-img">
+          <img src="https://thumb.tildacdn.com/tild6439-3831-4664-a337-346233653330/-/cover/910x1224/center/center/-/format/webp/IMG_6945_1.jpg" alt="" />
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  overflow-x:hidden;
 }
 
 .container {
@@ -12,13 +13,14 @@ body {
 }
 
 h1 {
-  font-family: 'Russo One', sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 80px;
 }
 
 h2 {
   font-family: 'Russo One', sans-serif;
-  font-size: 60px;
+  font-weight: 100;
+  font-size: 40px;
 }
 
 h3 {
