@@ -22,6 +22,7 @@ function Portfolio(props) {
           return <>
             <div key={el.id}>
               <div className="master-card">
+                <img src={el.picture} />
                 <h3 className="master-name">{el.name}</h3>
                 <p className="category-name">{el.category}</p>
                 <Link to={{ pathname: `/portfolio/${el.id}` }} className="meet-link">Познакомиться</Link>
