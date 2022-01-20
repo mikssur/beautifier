@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: 'SESSION_FETCH' })
-  }, [dispatch])
+  })
 
 
   return (

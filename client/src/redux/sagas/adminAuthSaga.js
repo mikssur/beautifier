@@ -19,7 +19,13 @@ function* fetchAdminAuth(action) {
     login: action.payload.login,
     pass: action.payload.pass
   });
-  yield put({ type: "INIT_SESSION", payload: { session } });
+  if (session.answer === true) {
+    console.log(session, 'authcheck');
+    yield put({ type: "AUTH_ANSWER", payload: session });
+  } else {
+    console.log(session, 'sessis');
+    yield put({ type: "INIT_SESSION", payload: { session } });
+  }
 }
 
 
