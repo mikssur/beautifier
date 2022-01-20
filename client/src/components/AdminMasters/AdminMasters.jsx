@@ -11,6 +11,8 @@ function AdminMasters(props) {
   const masterCategory = useRef();
 const [correctForm, setCorrectForm] = useState(false);
 const { session } = useSelector((state) => state.sessionReducer)
+const { allMasters } = useSelector((state) => state.mastersReducer)
+
 function deleteMaster(event, id) {
   console.log(id, 'idet');
   dispatch({ type: 'DELETE_MASTER', payload: {id}})
@@ -21,14 +23,10 @@ const dispatch = useDispatch()
   }, [dispatch])
   console.log(allMasters);
   return (
-    <div>
+    <div className="admin-masters-block"> 
       { session.isAdmin ? 
       <>
       <Link to="/admincabinet">Назад</Link>
-      <div>
-    <div className="admin-masters-block">
-      { session.isAdmin ? 
-      <>
       <h2>Мастера</h2>
       <div className="admin-menu">
         <Link to="/admincabinet">Личный кабинет</Link>

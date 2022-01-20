@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import './AdminChangePass.css';
 
 function AdminChangePass(props) {
@@ -30,7 +29,6 @@ function AdminChangePass(props) {
     <div className="admin-change-pass-block">
     { session.isAdmin ?
       <>
-      <form onSubmit={changePass}>
       <h2>Изменить пароль</h2>
       <div className="admin-menu">
         <Link to="/admincabinet">Личный кабинет</Link>
@@ -50,6 +48,7 @@ function AdminChangePass(props) {
       <div>Страница не найдена</div>
       }
     </div>
+    
   );
 }
 

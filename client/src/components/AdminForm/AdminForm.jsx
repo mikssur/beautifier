@@ -20,8 +20,9 @@ function Admin(props) {
   }
 
   return (
-    <h2>Войти</h2>
+    
     <div className="admin-form">
+      <h2>Войти</h2>
       Логин:<input onClick={() => dispatch({type: 'ADMIN_CHECK_RESET'})} ref={adminLoginInput} type="text" name="" />
       Пароль:<input ref={adminPassInput} type="password" name="" />
       <button onClick={(event) => adminFormHandler(event, adminLoginInput, adminPassInput)}>Авторизоваться</button>
