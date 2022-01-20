@@ -10,7 +10,7 @@ function AdminMasters(props) {
   const priceInput = useRef();
   const masterCategory = useRef();
 const [correctForm, setCorrectForm] = useState(false);
-const { allMasters } = useSelector(state => state.mastersReducer)
+const { allMasters } = useSelector(state => state.mastersReducer);
 function deleteMaster(event, id) {
   console.log(id, 'idet');
   dispatch({ type: 'DELETE_MASTER', payload: {id}})
