@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function AdminChangePass(props) {
 
   const dispatch = useDispatch()
+  const { session } = useSelector((state) => state.sessionReducer)
 
   function changePass(event) {
     event.preventDefault()
@@ -20,11 +21,16 @@ function AdminChangePass(props) {
 
   return (
     <div>
+      { session.isAdmin ?
+      <>
       <form onSubmit={changePass}>
         <input name='oldPass' type="text" placeholder='Старый пароль' />
         <input name='newPass' type="text" placeholder='Новый пароль' />
         <button>Изменить пароль</button>
       </form>
+      </> :
+      <div>Страница не найдена</div>
+      }
     </div>
   );
 }
