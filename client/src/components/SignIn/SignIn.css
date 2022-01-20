@@ -8,6 +8,10 @@
   margin: 5px 0 0 0;
 }
 
+.login-form button {
+  width: 100%;
+}
+
 .misha {
   visibility: hidden;
 }

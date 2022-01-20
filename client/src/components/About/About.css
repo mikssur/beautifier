@@ -1,0 +1,60 @@
+.about-row-1, .about-row-2, .about-row-3, .about-row-4 {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.about-row-1 img {
+  width: 800px;
+  height: 600px;
+  margin-top: 20%;
+}
+
+.about-header-1 {
+  position: absolute;
+  top: 28%;
+  left: -28%;
+}
+
+.about-desc-1 {
+  position: absolute;
+  top: 55%;
+  right: -48%;
+  font-size: 40px;
+}
+
+.about-row-2 img {
+  width: 800px;
+  height: 600px;
+  margin-top: 20%;
+}
+
+.about-header-2 {
+  position: absolute;
+  top: 28%;
+  left: -40%;
+}
+
+.about-desc-2 {
+  position: absolute;
+  top: 55%;
+  right: -48%;
+  font-size: 40px;
+}
+
+.about-row-3 img {
+  width: 800px;
+  height: 600px;
+  margin-top: 20%;
+}
+
+.about-desc-3 {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 100px;
+  text-transform: capitalize;
+}
+
+.about-header-3 {
+  margin-top: 200px;
+}

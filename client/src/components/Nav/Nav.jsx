@@ -52,14 +52,14 @@ function Nav(props) {
         <> <li>
           <Link to='/admincabinet'>Admin Cabinet</Link>
         </li>
-          <button onClick={() => signOut()}>Sign Out</button></>
+          <li><a onClick={() => signOut()}>Sign Out</a></li></>
         : 
         session.authClient ? 
         <> 
         <li>
         <Link to='/profile'> Cabinet</Link>
       </li>
-        <button onClick={() => signOut()}>Sign Out</button></> 
+        <li><a onClick={() => signOut()}>Sign Out</a></li></> 
         : 
         <>
         <li>

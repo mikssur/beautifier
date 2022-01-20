@@ -15,7 +15,7 @@ dispatch({
 
   return (
     <div>
-      <span onClick={addMasterId}>{name}</span>
+      <p><a onClick={addMasterId}>{name}</a></p>
     </div>
   );
 }

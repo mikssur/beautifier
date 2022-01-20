@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import './AdminChangePass.css';
 
 function AdminChangePass(props) {
 
@@ -19,8 +21,10 @@ function AdminChangePass(props) {
 
 
   return (
-    <div>
-      <form onSubmit={changePass}>
+    <div className="admin-change-pass-block">
+      <Link to="/admincabinet">Назад</Link>
+      <h2>Изменить пароль</h2>
+      <form onSubmit={changePass} className="change-pass-admin-form">
         <input name='oldPass' type="text" placeholder='Старый пароль' />
         <input name='newPass' type="text" placeholder='Новый пароль' />
         <button>Изменить пароль</button>

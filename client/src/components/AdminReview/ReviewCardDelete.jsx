@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Modal from './Modal';
 
-
 function ReviewCardDelete({ name, text, isValid, id }) {
   const dispatch = useDispatch()
   const reviewId = id
@@ -16,14 +15,13 @@ function ReviewCardDelete({ name, text, isValid, id }) {
   return (
     <>
         <li>
-          <p>{name}</p>
+          <h3>{name}</h3>
           <p>{text}</p>
         </li>
         <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
         <button onClick={() => dispatch({ type: 'APPROVE_FETCH_REVIEW', payload: { reviewId } })}>Пропустить отзыв</button>
         <button onClick={() => setModal(!modal)}>Править отзыв</button>
         { modal && <Modal name={name} text={text} id={reviewId}/> }
-
     </>
   );
 }

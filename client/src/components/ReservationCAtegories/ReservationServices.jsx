@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import './Reservation.css';
 
 function ReservationServices({ name, id }) {
 
@@ -24,7 +25,7 @@ function ReservationServices({ name, id }) {
 
   return (
     <div>
-      <span onClick={getMasters}>{name}</span>
+      <p><a onClick={getMasters}>{name}</a></p>
     </div>
   );
 }

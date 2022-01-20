@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import FreeTime from '../FreeTime/FreeTime';
 
+import './ReservationForm.css';
+
 function ReservationForm() {
 
   const dispatch = useDispatch()
@@ -53,25 +55,25 @@ function ReservationForm() {
     })();
   }
 
-  return (
-      <form onSubmit={newDatee}>
-        <span>Выберите день: </span>
-        <input name='Date' type="date" onChange={getFreeTime} min={nowDate} />
-        <br />
-        <span>Свободное время: </span>
-        <select name="time" >
-          {freeTime ? freeTime.map(el => <FreeTime key={el} el={el} />) : null}
-        </select>
-        <br />
-        <span>Ваше имя:</span>
-        <input name='clientName' type="text" />
-        <br />
-        <span>Ваше номер телефона:</span>
-        <input name='clientNumber' type="tel"
-          placeholder="+79123456789" />
-        <br />
-        <input type="submit" />
-      </form>
+  return (<>
+      <h3>Форма записи</h3>
+        <form onSubmit={newDatee}>
+          <p>Выберите день:</p>
+          <input name='Date' type="date" onChange={getFreeTime} min={nowDate} />
+          <br />
+          <p>Свободное время:</p>
+          <select name="time">
+            {freeTime ? freeTime.map(el => <FreeTime key={el} el={el} />) : null}
+          </select>
+          <p>Ваше имя:</p>
+          <input name='clientName' type="text" />
+          <br />
+          <p>Ваше номер телефона:</p>
+          <input name='clientNumber' type="tel"
+            placeholder="+79123456789" />
+          <button type="submit">Записаться</button>
+        </form>
+  </>
   );
 }
 
