@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './AdminChangePass.css';
@@ -8,7 +9,7 @@ function AdminChangePass(props) {
   const dispatch = useDispatch();
 
   const { message } = useSelector(state => state.adminRegistrationReducer);
-
+  const { session } = useSelector((state) => state.sessionReducer)
 
   function changePass(event) {
     event.preventDefault()
@@ -27,6 +28,9 @@ function AdminChangePass(props) {
 
   return (
     <div className="admin-change-pass-block">
+    { session.isAdmin ?
+      <>
+      <form onSubmit={changePass}>
       <h2>Изменить пароль</h2>
       <div className="admin-menu">
         <Link to="/admincabinet">Личный кабинет</Link>
@@ -42,6 +46,9 @@ function AdminChangePass(props) {
 
         <button>Изменить пароль</button>
       </form>
+      </> :
+      <div>Страница не найдена</div>
+      }
     </div>
   );
 }

@@ -4,13 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { initReviewsAC } from '../../redux/actionCreators/reviewsAC/reviewsAC';
 import { Link } from 'react-router-dom';
 import ReviewCardDelete from './ReviewCardDelete';
-
 import './AdminReview.css';
 
 function AdminReview(props) {
 
   const dispatch = useDispatch()
   const { reviews } = useSelector(state => state.reviewsReducer)
+  const { session } = useSelector((state) => state.sessionReducer)
   const newReviews = reviews.filter((el) => el.isValid != false)
   console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', newReviews)
   const falseReviews = reviews.filter((el) => el.isValid == false)
@@ -28,6 +28,8 @@ function AdminReview(props) {
 
   return (
     <div className="admin-reviews-block">
+       { session.isAdmin ?
+      <>
       <h2>Отзывы</h2>
       <div className="admin-menu">
         <Link to="/admincabinet">Личный кабинет</Link>
@@ -45,6 +47,9 @@ function AdminReview(props) {
         </ul>
       </div>
       {/* {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>} */}
+      </> :
+      <div>Страница не найдена</div>
+      }
     </div>
   );
 }

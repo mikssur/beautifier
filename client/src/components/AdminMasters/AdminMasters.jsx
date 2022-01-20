@@ -10,7 +10,7 @@ function AdminMasters(props) {
   const priceInput = useRef();
   const masterCategory = useRef();
 const [correctForm, setCorrectForm] = useState(false);
-const { allMasters } = useSelector(state => state.mastersReducer);
+const { session } = useSelector((state) => state.sessionReducer)
 function deleteMaster(event, id) {
   console.log(id, 'idet');
   dispatch({ type: 'DELETE_MASTER', payload: {id}})
@@ -21,7 +21,14 @@ const dispatch = useDispatch()
   }, [dispatch])
   console.log(allMasters);
   return (
+    <div>
+      { session.isAdmin ? 
+      <>
+      <Link to="/admincabinet">Назад</Link>
+      <div>
     <div className="admin-masters-block">
+      { session.isAdmin ? 
+      <>
       <h2>Мастера</h2>
       <div className="admin-menu">
         <Link to="/admincabinet">Личный кабинет</Link>
@@ -42,6 +49,9 @@ const dispatch = useDispatch()
       </div>)
       }
       </div>
+      </> :
+     <div>Страница не найдена</div>
+    }
     </div>
   );
 }

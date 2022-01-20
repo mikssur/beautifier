@@ -31,7 +31,7 @@ function ReservationCategories(props) {
         </div>
         <div className="reserv-services">
           <h3>Услуги</h3>
-          {reservationServices ? reservationServices.map(el => <ReservationServices key={el.id} id={el.id} name={el.name} />) : null}
+          {reservationServices ? reservationServices.map(el => <ReservationServices key={el.id} id={el.id} name={el.name} price={el.price} />) : null}
         </div>
         <div className="reserv-masters">
           <h3>Мастера</h3>

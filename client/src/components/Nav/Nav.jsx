@@ -7,7 +7,6 @@ function Nav(props) {
   const { session } = useSelector((state) => state.sessionReducer)
   const dispatch = useDispatch();
 
-
   // console.log(session.authClient, 'client session')
   console.log(session);
   async function signOut() {
@@ -40,10 +39,10 @@ function Nav(props) {
       <li>
         <Link to="/portfolio">Мастера</Link>
       </li>
-      {session.authClient && session.isAdmin ?
+      {/* {session.authClient && session.isAdmin ?
         <li>
           <Link to="/admincabinet">Кабинет</Link>
-        </li> : ''}
+        </li> : ''} */}
       <li>
         <Link to="/reservation">Записаться</Link>
       </li>
@@ -59,7 +58,7 @@ function Nav(props) {
         <li>
         <Link to='/profile'>Личный кабинет</Link>
       </li>
-        <li><a onClick={() => signOut()}>Sign Out</a></li></> 
+        <li><a onClick={() => signOut()}>Выйти</a></li></> 
         : 
         <>
         <li>
