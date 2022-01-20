@@ -20,7 +20,7 @@ function Reservations({id}) {
   function deleteUser(event, id) {
     dispatch({ type: 'DELETE_USER', payload: {id}})
   }
-  console.log(rightReservation);
+  //console.log(rightReservation);
   return (
     <div>
       {correctForm ? 
