@@ -22,9 +22,13 @@ const dispatch = useDispatch()
   console.log(allMasters);
   return (
     <div className="admin-masters-block">
-      <Link to="/admincabinet">Назад</Link>
       <h2>Мастера</h2>
-      <p>Добавить Мастера</p>
+      <div className="admin-menu">
+        <Link to="/admincabinet">Личный кабинет</Link>
+        <Link to="/adminreview">Отзывы</Link>
+        <Link to="/adminmasters">Мастера</Link>
+        <Link to="/adminchangepass">Изменить пароль</Link>
+      </div>
       <div className="admin-masters">
       {allMasters.length > 0 && allMasters.map(master => 
       <div className="admin-master-item" key={master.id}>

@@ -28,8 +28,13 @@ function AdminReview(props) {
 
   return (
     <div className="admin-reviews-block">
-      <Link to="/admincabinet">Назад</Link>
       <h2>Отзывы</h2>
+      <div className="admin-menu">
+        <Link to="/admincabinet">Личный кабинет</Link>
+        <Link to="/adminreview">Отзывы</Link>
+        <Link to="/adminmasters">Мастера</Link>
+        <Link to="/adminchangepass">Изменить пароль</Link>
+      </div>
       <div className="admin-reviews">
         <ul>
           {newReviews.length ? newReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <>No Reviews</> }

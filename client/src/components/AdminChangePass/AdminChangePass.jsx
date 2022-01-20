@@ -22,8 +22,13 @@ function AdminChangePass(props) {
 
   return (
     <div className="admin-change-pass-block">
-      <Link to="/admincabinet">Назад</Link>
       <h2>Изменить пароль</h2>
+      <div className="admin-menu">
+        <Link to="/admincabinet">Личный кабинет</Link>
+        <Link to="/adminreview">Отзывы</Link>
+        <Link to="/adminmasters">Мастера</Link>
+        <Link to="/adminchangepass">Изменить пароль</Link>
+      </div>
       <form onSubmit={changePass} className="change-pass-admin-form">
         <input name='oldPass' type="text" placeholder='Старый пароль' />
         <input name='newPass' type="text" placeholder='Новый пароль' />
