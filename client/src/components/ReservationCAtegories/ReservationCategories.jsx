@@ -23,6 +23,7 @@ function ReservationCategories(props) {
 
   return (
     <div className="reservation">
+      <h2>Записаться</h2>
       <div className="reservation-row-1">
         <div className="reserv-category">
           <h3>Категории</h3>

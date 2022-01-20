@@ -36,7 +36,7 @@ function Review(props) {
 
   return (
     <div className="review-block">
-      <h2>Reviews</h2>
+      <h2>Отзывы</h2>
       <div className="review-body">
         {newReviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />)}
       </div>

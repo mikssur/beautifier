@@ -18,3 +18,17 @@
   flex-direction: column;
   align-items: center;
 }
+
+.admin-reviews button {
+  width: 100%;
+  margin: 5px 0 0 0;
+}
+
+.admin-reviews input, .admin-reviews textarea {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.admin-reviews input {
+  margin-top: 25px;
+}
