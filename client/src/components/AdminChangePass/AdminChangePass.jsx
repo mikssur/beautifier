@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import './AdminChangePass.css';
 
 function AdminChangePass(props) {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  const { message } = useSelector(state => state.adminRegistrationReducer);
   const { session } = useSelector((state) => state.sessionReducer)
 
   function changePass(event) {
@@ -15,10 +16,13 @@ function AdminChangePass(props) {
 
     const oldPass = event.target.oldPass.value;
     const newPass = event.target.newPass.value;
+    const newPass2 = event.target.newPass2.value;
 
-    dispatch({ type: 'ADMIN_CHANGE_PASS_FETCH', payload: { oldPass, newPass } })
+    dispatch({ type: 'ADMIN_CHANGE_PASS_FETCH', payload: { oldPass, newPass, newPass2 } })
     event.target.oldPass.value = '';
-    event.target.newPass.value = ''
+    event.target.newPass.value = '';
+    event.target.newPass2.value = '';
+
   }
 
 
@@ -35,8 +39,11 @@ function AdminChangePass(props) {
         <Link to="/adminchangepass">Изменить пароль</Link>
       </div>
       <form onSubmit={changePass} className="change-pass-admin-form">
-        <input name='oldPass' type="text" placeholder='Старый пароль' />
-        <input name='newPass' type="text" placeholder='Новый пароль' />
+        <input onClick={() => dispatch({ type: 'RESET_MESSAGE' })} name='oldPass' type="password" placeholder='Старый пароль' />
+        <input name='newPass' type="password" placeholder='Новый пароль' />
+        <input name='newPass2' type="password" placeholder='Повторите новый пароль' />
+        {message === 'Неверный пароль' ? <p>{message}</p> : message === 'Введённые пароли не совпадают' ? <p>{message}</p> : <p>{message}</p>}
+
         <button>Изменить пароль</button>
       </form>
       </> :

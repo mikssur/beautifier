@@ -10,7 +10,6 @@ function AdminMasters(props) {
   const priceInput = useRef();
   const masterCategory = useRef();
 const [correctForm, setCorrectForm] = useState(false);
-const { allMasters } = useSelector(state => state.mastersReducer)
 const { session } = useSelector((state) => state.sessionReducer)
 function deleteMaster(event, id) {
   console.log(id, 'idet');

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { appReducer } from './appReducer';
 
 import { categoriesReducer } from './categoriesReducer';
+import adminRegistrationReducer from './adminRegistrationReducer';
 import adminFormReducer from './adminFormReducer'
 import { portfolioReducer } from './portfolioReducer';
 import { portfolioCReducer } from './portfolioCReducer';
@@ -21,6 +22,6 @@ import clientReducer from './clientReducer';
 export const rootReducer = combineReducers({
   appReducer, reviewsReducer,
   portfolioReducer, categoriesReducer, reservationReducer, portfolioCReducer, servicesReducer, mastersReducer, sessionReducer, reservationCategoriesReducer,
-  cabinetReducer, signupReducer, signinReducer, clientReducer, adminCabinetReducer, adminFormReducer
+  cabinetReducer, signupReducer, signinReducer, clientReducer, adminCabinetReducer, adminRegistrationReducer, adminFormReducer
   // categoriesReducer,
 });
