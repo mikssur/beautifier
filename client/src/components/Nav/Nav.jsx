@@ -59,7 +59,7 @@ function Nav(props) {
         <li>
         <Link to='/profile'>Личный кабинет</Link>
       </li>
-        <li><a onClick={() => signOut()}>Sign Out</a></li></> 
+        <li><a onClick={() => signOut()}>Выйти</a></li></> 
         : 
         <>
         <li>

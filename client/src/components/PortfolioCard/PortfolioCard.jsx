@@ -14,7 +14,7 @@ function PortfolioCard(props) {
   }, [dispatch])
   return (
     <>
-    <h3>Услуги мастера</h3>
+      <h3>Услуги мастера</h3>
       {services ? services.map(el => <p>{el.name}</p>) : 'zagruzka'}
 
     </>

@@ -26,3 +26,7 @@
 .meet-link:hover {
   color: rgb(126, 206, 6);
 }
+
+.master-card img {
+  width: 100%;
+}
