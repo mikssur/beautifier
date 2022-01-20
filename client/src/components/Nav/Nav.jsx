@@ -26,19 +26,19 @@ function Nav(props) {
 
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/">Главная</Link>
       </li>
       <li>
-        <Link to="/categories">Categories</Link>
+        <Link to="/categories">Категории</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about">О нас</Link>
       </li>
       <li>
-        <Link to="/reviews">Review</Link>
+        <Link to="/reviews">Отзывы</Link>
       </li>
       <li>
-        <Link to="/portfolio">Portfolio</Link>
+        <Link to="/portfolio">Мастера</Link>
       </li>
       {session.authClient && session.isAdmin ?
         <li>
@@ -50,23 +50,23 @@ function Nav(props) {
       { 
       session.isAdmin ?
         <> <li>
-          <Link to='/admincabinet'>Admin Cabinet</Link>
+          <Link to='/admincabinet'>Кабинет администратора</Link>
         </li>
-          <li><a onClick={() => signOut()}>Sign Out</a></li></>
+          <li><a onClick={() => signOut()}>Выйти</a></li></>
         : 
         session.authClient ? 
         <> 
         <li>
-        <Link to='/profile'> Cabinet</Link>
+        <Link to='/profile'>Личный кабинет</Link>
       </li>
         <li><a onClick={() => signOut()}>Sign Out</a></li></> 
         : 
         <>
         <li>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup">Зарегистрироваться</Link>
         </li>
         <li>
-          <Link to="/signin">Sign In</Link>
+          <Link to="/signin">Войти</Link>
         </li>
       </>
       }

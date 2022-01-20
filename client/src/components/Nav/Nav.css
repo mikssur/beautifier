@@ -1,5 +1,6 @@
 .main-nav {
   display: flex;
+  margin-top: 30px;
 }
 
 .main-nav a {

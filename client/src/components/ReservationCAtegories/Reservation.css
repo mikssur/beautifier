@@ -18,6 +18,10 @@ h3 {
   flex-direction: column;
 }
 
+.reservation h2 {
+  text-align: center;
+}
+
 .reservation-row-1, .reservation-row-2 {
   display: flex;
 }

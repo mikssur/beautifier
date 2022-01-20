@@ -17,11 +17,11 @@ function ReviewCardDelete({ name, text, isValid, id }) {
         <li>
           <h3>{name}</h3>
           <p>{text}</p>
+          <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
+          <button onClick={() => dispatch({ type: 'APPROVE_FETCH_REVIEW', payload: { reviewId } })}>Пропустить отзыв</button>
+          <button onClick={() => setModal(!modal)}>Править отзыв</button>
+          { modal && <Modal name={name} text={text} id={reviewId}/> }
         </li>
-        <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
-        <button onClick={() => dispatch({ type: 'APPROVE_FETCH_REVIEW', payload: { reviewId } })}>Пропустить отзыв</button>
-        <button onClick={() => setModal(!modal)}>Править отзыв</button>
-        { modal && <Modal name={name} text={text} id={reviewId}/> }
     </>
   );
 }
