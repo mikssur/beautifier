@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import './Reservation.css';
+
 function ItemReservationCategory({ name, id }) {
 
   const dispatch = useDispatch();
@@ -18,10 +20,11 @@ function ItemReservationCategory({ name, id }) {
 
   return (
     <>
-      <span onClick={getServices}>
-        {name}
-      </span>
-      <br />
+      <p>
+        <a onClick={getServices}>
+          {name}
+        </a>
+      </p>
     </>
 
   );
