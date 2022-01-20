@@ -15,17 +15,14 @@ export const reviewsReducer = (state = initialState, action) => {
 
      case DELETE_REVIEW: {
       const id = action.payload.review.id
-      console.log('DELETE REVIEW REDUCERRRRRRR', id)
       //const toDelete = state.reviews.find((el) => el.id === id)
       //const newReviews = [...state.reviews.splice(state.reviews.indexOf(toDelete), 1)]
       const newReviews = state.reviews.filter((el) => el.id != id )
-      console.log('BLIIIIII', newReviews)
 
       return { ...state, reviews: newReviews }
     }
     case ADD_REVIEW: {
       const review = action.payload.review
-      console.log('()%%$##@^&*()_()*(*&%$%', review)
       return { ...state, reviews: [...state.reviews, review] }
     }
     case CHANGE_STATUS_REVIEW: {

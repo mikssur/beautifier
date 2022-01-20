@@ -18,9 +18,7 @@ router.route('/')
       });
     } else {
       const isCorrectPassword = await bcrypt.compare(password, checkClient.password);
-      console.log(isCorrectPassword, 'correct pas');
       if (!isCorrectPassword) {
-        console.log(checkClient, 'hiii therereweiowper');
         res.status(401).json({
           message: 'Пароль введен неправильно!',
           correctPassword: false,

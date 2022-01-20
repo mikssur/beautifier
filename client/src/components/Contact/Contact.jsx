@@ -1,10 +1,10 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Contact.css';
 
 function Contact(props) {
-  const coordinates = [59.927310, 30.350840];  
+  const coordinates = [59.927310, 30.350840];
   return (
     <div className="footer">
       <div className="footer-content">
@@ -41,9 +41,9 @@ function Contact(props) {
             <h3>Контакты</h3>
             <ul>
               <li><strong>Адрес</strong>: Кузнецовский переулок 5/2</li>
-              <li><strong>Телефон</strong>: +7-XXX-XXX-XXX</li>
+              <li><strong>Телефон</strong>: +7-911-061-437</li>
               <li><strong>Почта</strong>: beautifier@gmail.com</li>
-          </ul>
+            </ul>
           </div>
         </div>
         <div className="footer-content-row-3">

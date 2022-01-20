@@ -2,7 +2,6 @@ const route = require('express').Router();
 const { Rewiew } = require('../db/models');
 
 route.put('/', async (req, res) => {
-  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
   const { id } = req.body.obj;
   const { name } = req.body.obj;
   const { text } = req.body.obj;
@@ -13,7 +12,6 @@ route.put('/', async (req, res) => {
   try {
     // eslint-disable-next-line no-unused-vars
     const changed = await Rewiew.update({ name, text, isValid: 'true' }, { where: { id }, raw: true });
-    console.log(changed, 'DAAAAA');
     const changed1 = await Rewiew.findOne({ where: { id }, raw: true });
     return res.json({ changed1 });
   } catch (error) {

@@ -12,7 +12,6 @@ function SignUp(props) {
   const clientTelInput = useRef();
   const { session } = useSelector((state) => state.sessionReducer)
   const { clientExist } = useSelector((state) => state.signupReducer)
-  console.log(clientExist === 'initial', 'signup')
   async function clientFormHandler(event, clientLoginInput, clientPassInput, clientTelInput) {
     event.preventDefault();
 

@@ -9,7 +9,6 @@ function Nav(props) {
 
 
   // console.log(session.authClient, 'client session')
-  console.log(session);
   async function signOut() {
     try {
       await fetch('/signout');

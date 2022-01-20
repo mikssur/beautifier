@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 
 const generateHashPass = (password) => bcrypt.hashSync(password, 10);
-console.log(generateHashPass('123456789'));
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
