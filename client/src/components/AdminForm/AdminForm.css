@@ -1,0 +1,8 @@
+.admin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form input {
+  margin: 5px 0 0;
+}

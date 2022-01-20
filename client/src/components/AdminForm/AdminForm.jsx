@@ -1,6 +1,9 @@
 import React from 'react';
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+
+import './AdminForm.css';
+
 function Admin(props) {
   const adminLoginInput = useRef();
   const adminPassInput = useRef();
@@ -16,11 +19,14 @@ function Admin(props) {
   }
 
   return (
-    <div>
-      Логин:<input ref={adminLoginInput} type="text" name="" id="" />
-      Пароль:<input ref={adminPassInput} type="password" name="" id="" />
-      <button onClick={(event) => adminFormHandler(event, adminLoginInput, adminPassInput)}>Авторизоваться</button>
-    </div>
+    <>
+      <h2>Войти</h2>
+      <div className="admin-form">
+        <input ref={adminLoginInput} type="text" name="" id="" placeholder="Введите логин" />
+        <input ref={adminPassInput} type="password" name="" id="" placeholder="Введите пароль" />
+        <button onClick={(event) => adminFormHandler(event, adminLoginInput, adminPassInput)}>Авторизоваться</button>
+      </div>
+    </>
   );
 }
 
