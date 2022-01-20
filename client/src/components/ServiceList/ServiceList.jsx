@@ -11,9 +11,13 @@ function ServiceList(props) {
   const services = useSelector(state => state.servicesReducer.services)
   console.log(services, 'SER----VI----CES')
   const dispatch = useDispatch()
-  const { categoryname } = useParams()
+  const categoryname = useParams().categoryname
+  console.log('USE PARAMS USE PARAMS USE PARAMS USE PARAMS', categoryname)
+  const { id } = useParams()
 
-  // //useEffect(() => {dispatch(fetchServicesAC())}, [dispatch])
+  useEffect(() => {
+    dispatch({ type: 'GET_FETCH_SERVICES', payload: { id } })
+  }, [dispatch])
 
   return (
     <div>
