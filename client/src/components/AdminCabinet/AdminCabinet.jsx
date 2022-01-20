@@ -12,7 +12,6 @@ function AdminCabinet(props) {
   const { session } = useSelector((state) => state.sessionReducer)
   const { reservations } = useSelector(state => state.reservationReducer)
   const date = Date.now()
-  console.log(date);
   useEffect(() => {
     dispatch({ type: 'ADMIN_RESERVATIONS_FETCH' })
   }, [dispatch])

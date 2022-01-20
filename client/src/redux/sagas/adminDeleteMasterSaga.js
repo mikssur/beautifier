@@ -8,7 +8,6 @@ const deleteMasterFetch = async ({ id }) => {
       id,
     })
   })
-  console.log("DeleteMaster");
   const masters = await response.json()
   return masters
 }

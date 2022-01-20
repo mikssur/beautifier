@@ -10,7 +10,6 @@ const servicesReducer = (state = servicesInitialState, action) => {
   switch (action.type) {
     case servicesAT.INIT_SERVICES:
       const services = action.payload.services
-      console.log('SERVICES V REDJUSEREEE!!!!!!!!!!', services)
       return { ...state, services: services };
 
     default:

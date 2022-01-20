@@ -13,9 +13,7 @@ const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INIT_SESSION":
       const copySession = { ...state.session };
-      console.log(action.payload.session);
       copySession.isAdmin = action.payload.session.isAdmin;
-      console.log(copySession);
       copySession.authClient = action.payload.session.authClient;
       return { ...state, session: copySession }
 

@@ -4,7 +4,6 @@ const reservationFetch = async () => {
 
   // в ссылке может быть неправильный сервер и порт
   const response = await fetch(`/admincabinet`)
-  console.log("sagaReservation:", response);
   const reservations = await response.json()
 
   return reservations
@@ -17,6 +16,5 @@ function* fetchReservation() {
 
 
 export function* adminReservationWatcher() {
-  console.log(456);
   yield takeEvery("ADMIN_RESERVATIONS_FETCH", fetchReservation);
 }

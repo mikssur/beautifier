@@ -7,11 +7,8 @@ function ReviewCardDelete({ name, text, isValid, id }) {
   const dispatch = useDispatch()
   const reviewId = id
   const currentURL = window.location.href
-  console.log('CURRENT URL V REVIEW CARD', currentURL)
   //const urll = currentURL.split().splice(0, 22)
   const [ modal, setModal ] = useState(false)
-
-  console.log('REVIEWID V REVIEWCARD NACHALO', id)
   return (
     <>
         <li>

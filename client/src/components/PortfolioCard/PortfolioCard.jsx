@@ -8,7 +8,6 @@ function PortfolioCard(props) {
   const dispatch = useDispatch();
   const { masterId } = useParams()
   const { services } = useSelector((state) => state.portfolioCReducer)
-  console.log(services, 'max');
   useEffect(() => {
     dispatch({ type: 'PORTFOLIO_CARD_FETCH', payload: { masterId } })
   }, [dispatch])

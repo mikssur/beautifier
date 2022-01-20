@@ -8,7 +8,6 @@ function Nav(props) {
   const dispatch = useDispatch();
 
   // console.log(session.authClient, 'client session')
-  console.log(session);
   async function signOut() {
     try {
       await fetch('/signout');

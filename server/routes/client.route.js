@@ -11,7 +11,6 @@ router.route('/')
       },
     });
 
-    console.log(checkClient, 'checkclient');
 
     if (checkClient) {
       res

@@ -27,11 +27,10 @@ export function AddReviewForm() {
     event.preventDefault()
     const name = event.target.clientReviewName.value
     const text = event.target.newReviewValue.value
-    console.log('REFFFFFFIIII V ADD REVIEW COMPONENT', name, text);
-    dispatch( { type: 'ADD_FETCH_REVIEW', payload: { name: name, text: text, isValid: isValid } })
+    dispatch({ type: 'ADD_FETCH_REVIEW', payload: { name: name, text: text, isValid: isValid } })
     setName('')
     setText('')
-    }
+  }
 
   // function addReview(event) {
   //   event.preventDefault()
@@ -51,7 +50,7 @@ export function AddReviewForm() {
   // }
   // onChange={nameChange}
   // onChange={textChange}
-  
+
 
   //onSubmit={addReview}
   return (
