@@ -9,9 +9,49 @@ route.get('/', (req, res) => {
 });
 
 route.post('/', (req, res) => {
-  Rewiew.create(req.body)
+  console.log('SERRRVERRR', req.body);
+  Rewiew.create(req.body.obj)
     .then((newReview) => res.status(201).json(newReview))
     .catch((error) => res.status(500).json(error));
 });
 
+route.delete('/:id', async (req, res) => {
+  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
+  const { params } = req;
+  const { id } = params;
+  // Rewiew.destroy({ where: { id }, raw: true })
+  //   .then((delReview) => res.status(201).json({ delReview, id }))
+  //   .catch((error) => res.status(500).json(error));
+  // // return res.json({ deleted: true }) POCHEMY V ETOJ STROKE ???
+  try {
+    // eslint-disable-next-line no-unused-vars
+    const deleted = await Rewiew.destroy({ where: { id }, raw: true });
+    console.log(deleted, 'DAAAAA');
+    return res.json({ deleted: true, id });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(401).json({ deleted: false });
+  }
+});
+
+route.put('/:id', async (req, res) => {
+  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
+  const { params } = req;
+  const { id } = params;
+  // Rewiew.destroy({ where: { id }, raw: true })
+  //   .then((delReview) => res.status(201).json({ delReview, id }))
+  //   .catch((error) => res.status(500).json(error));
+  // // return res.json({ deleted: true }) POCHEMY V ETOJ STROKE ???
+  try {
+    // eslint-disable-next-line no-unused-vars
+    const changed = await Rewiew.update({ isValid: 'true' }, { where: { id }, raw: true });
+    console.log(changed, 'DAAAAA');
+    return res.json({ changed: true, id });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(401).json({ changed: false });
+  }
+});
 module.exports = route;

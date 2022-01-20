@@ -21,6 +21,7 @@ function ReviewCard({ name, text, isValid, id }) {
         {/* null} */}
         {/* <Link to={`/adminreview`}> */}
         <button onClick={() => dispatch({ type: 'DELETE_FETCH_REVIEW', payload: { reviewId } })}>Удалить отзыв</button>
+        <button onClick={() => dispatch({ type: 'APPROVE_FETCH_REVIEW', payload: { reviewId } })}>Пропустить отзыв</button>
         {/* </Link> */}
     </>
   );

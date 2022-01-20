@@ -1,6 +1,7 @@
 import { INIT_REVIEWS } from '../actionTypes/reviewsAT/reviewsAT'
 import { DELETE_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
 import { ADD_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
+import { CHANGE_STATUS_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
 
 const initialState = { reviews: [] }
 
@@ -25,6 +26,20 @@ export const reviewsReducer = (state = initialState, action) => {
       const review = action.payload.review
       console.log('()%%$##@^&*()_()*(*&%$%', review)
       return { ...state, reviews: [...state.reviews, review] }
+    }
+    case CHANGE_STATUS_REVIEW: {
+      const id = action.payload.review.id
+      console.log('()%%$##@^&*()_()*(*&%$%', id)
+
+      const changedReviews = state.reviews.map((el) => {
+        if(el.id == id) {
+          el.isValid = true
+          return el
+        }
+          return el
+        })
+      
+      return { ...state, reviews: changedReviews }
     }
 
     default:

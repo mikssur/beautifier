@@ -67,6 +67,23 @@ const fetchAddReview = async ({obj}) => {
   return review
 }
 
+const fetchApproveReview = async ({id}) => {
+  console.log('ID V SAGAH FETCH REVIEW CHTO PEREDAJETSYA', id)
+
+  const response = await fetch(`/reviews/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'Application/json' },
+    body: JSON.stringify({
+      id,
+    })
+  })
+  console.log("deleteReview response", response);
+  const review = await response.json()
+  // const id = review.id
+  console.log('RV SAGAH REVIEW DOLZHNO BITJ OTVET I ID', review)
+  return review
+}
+
 
 function* getFetchCategories() {
   console.log('GETFETCH FUNCTION')
@@ -107,6 +124,13 @@ function* addFetchReview(action) {
   console.log(review, 'REVIEWWWWWWWWWWWWWWW')
   yield put({ type: 'ADD_REVIEW', payload: { review } })
 }
+
+function* getApproveFetchReview(action) {
+  console.log('101010011001010010101PAYLOAD', action.payload)
+  const review = yield call(fetchApproveReview, {id: action.payload.reviewId})
+  console.log(review, 'REVIEWWWWWWWWWWWWWWW')
+  yield put({ type: 'CHANGE_STATUS_REVIEW', payload: { review } })
+}
 // // наблюдатель (watcher) типа действия + какой исполнитель будет работать
 export function* mySaga() {
   console.log('SAGA WATCHER')
@@ -117,6 +141,7 @@ export function* mySaga() {
   yield takeEvery("GET_FETCH_MASTERS", getFetchMasters);
   yield takeEvery("DELETE_FETCH_REVIEW", deleteFetchReview);
   yield takeEvery("ADD_FETCH_REVIEW", addFetchReview);
+  yield takeEvery("APPROVE_FETCH_REVIEW", getApproveFetchReview);
 }
 
 export default mySaga;
