@@ -8,7 +8,6 @@ const deleteUserFetch = async ({ id }) => {
       id,
     })
   })
-  console.log("DeleteUser");
   const reservations = await response.json()
   return reservations
 }

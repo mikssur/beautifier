@@ -4,7 +4,6 @@ const initialState = { reservation: { reservations: [], masters: [], services: [
 export const cabinetReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INIT_CABINET': {
-      console.log(action.payload)
       const copyReservation = { ...state.reservation };
 
 

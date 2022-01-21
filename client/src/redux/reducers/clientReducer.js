@@ -12,8 +12,6 @@ const clientReducer = (state = initialState, action) => {
       let copyTelephone = { ...state.telephone };
       let copyPassword = { ...state.password };
 
-      console.log(action.payload.telephone)
-
       copyTelephone = action.payload.telephone;
       copyPassword = action.payload.password;
 

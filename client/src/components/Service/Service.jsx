@@ -7,12 +7,10 @@ import './Service.css';
 
 function Service({ service }) {
   const dispatch = useDispatch()
-  console.log('SERVICE RENDER', service)
   const servicename = service.name
   const id = service.id
   const picture = service.picture
   const currentURL = window.location.pathname
-  console.log('URLURLURLURL V KOMPONENTE SERVICE', currentURL, service)
   return (
     <div className="service-card">
       <Link to={`/categories/:categoryname/${servicename}/${id}`}>

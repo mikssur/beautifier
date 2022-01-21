@@ -11,7 +11,6 @@ route.post('/', async (req, res) => {
   });
 // console.log('==========>>> price', price.price);
   req.body.price = price.price;
-  console.log(req.body);
 
   Reservation.create(req.body);
   res.status(201);

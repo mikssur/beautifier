@@ -3,7 +3,6 @@ const router = require('express').Router();
 // пока не работает
 router.route('/')
   .get(async (req, res) => {
-    console.log(req.session.user, 'server session');
     if (req.session.user) {
       if (req.session.user.isAdmin) {
         res.json({ authClient: true, isAdmin: true });
