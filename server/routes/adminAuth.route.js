@@ -21,19 +21,20 @@ router.route('/')
           checkPass: false,
           message: 'Не верный пароль',
         });
-      } else {
-        req.session.user = {
-          id: findAdmin.id,
-          login: findAdmin.login,
-          telephone: findAdmin.telephone,
-          signedUp: true,
-          isAdmin: true,
-        };
-        res.json({
-          authClient: true,
-          isAdmin: true,
-        });
+        return;
       }
+      req.session.user = {
+        id: findAdmin.id,
+        login: findAdmin.login,
+        telephone: findAdmin.telephone,
+        signedUp: true,
+        isAdmin: true,
+      };
+      res.json({
+        authClient: true,
+        isAdmin: true,
+      });
+      return;
     }
     res.json({
       answer: true,

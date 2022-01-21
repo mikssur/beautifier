@@ -7,7 +7,9 @@ const reservationCategoriesInitialState = {
   reservationServiceId: null,
   reservationMasterId: null,
   freeTime: [],
-  allTime: time
+  allTime: time,
+  itemService: null,
+  itemMaster: null,
 }
 
 export const reservationCategoriesReducer = (state = reservationCategoriesInitialState, action) => {
@@ -26,18 +28,21 @@ export const reservationCategoriesReducer = (state = reservationCategoriesInitia
       const { masters } = action.payload;
       const { serviceId } = action.payload;
       const copyState = { ...state };
-
+      const { service } = action.payload;
+      // console.log(master, '==============MASTER');
       let copyMasters = copyState.reservationMasters
       let copyServiceId = copyState.reservationServiceId
 
       copyMasters = masters;
       copyServiceId = serviceId
 
-      return { ...state, reservationMasters: copyMasters, reservationServiceId: copyServiceId, };
+      return { ...state, reservationMasters: copyMasters, reservationServiceId: copyServiceId, itemService: service };
 
     case 'ADD_RESERVATION_MASTER':
-      const masterId = action.payload
-      return { ...state, reservationMasterId: masterId };
+      const masterId = action.payload.id
+      const { master } = action.payload
+      // console.log(action.payload, '98769541651651654654');
+      return { ...state, reservationMasterId: masterId, itemMaster: master };
 
 
     case 'CLEAR_RESERV':

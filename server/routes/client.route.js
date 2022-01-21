@@ -11,7 +11,6 @@ router.route('/')
       },
     });
 
-
     if (checkClient) {
       res
         .status(409)

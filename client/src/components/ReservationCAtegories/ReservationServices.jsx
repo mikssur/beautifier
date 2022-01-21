@@ -18,6 +18,7 @@ function ReservationServices({ name, id, price }) {
         payload: {
           masters: res,
           serviceId: id,
+          service: name,
         },
       })
     })();
