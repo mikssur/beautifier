@@ -5,13 +5,15 @@ import { useDispatch } from 'react-redux';
 
 function ReservationMasters({ name, id }) {
   const dispatch = useDispatch();
-
-function addMasterId () {
-dispatch({
-  type: 'ADD_RESERVATION_MASTER',
-  payload: id,
-})
-}
+  function addMasterId() {
+    dispatch({
+      type: 'ADD_RESERVATION_MASTER',
+      payload: {
+        id,
+        master: name,
+      }
+    })
+  }
 
   return (
     <div>

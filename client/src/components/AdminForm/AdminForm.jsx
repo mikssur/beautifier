@@ -30,7 +30,7 @@ function Admin(props) {
     <div>Неверный Логин</div> :
     <div></div>
     }
-    <div>{session.isAdmin ? window.location.href = 'http://localhost:3000/admincabinet' : <></>}</div>
+    <div className='directadmin'>{session.isAdmin ? window.location.href = 'http://localhost:3000/admincabinet' : <></>}</div>
     </div>
   );
 }
