@@ -14,7 +14,6 @@ router.route('/:id')
         },
         raw: true,
       });
-      console.log('SVIAZYJUSHAJA TABLICAAAAAAAAAAAA', masterServices);
       let masters = [];
       const ids = masterServices.map((el) => el.masterId);
 

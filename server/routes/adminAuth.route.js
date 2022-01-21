@@ -6,26 +6,20 @@ const { Client } = require('../db/models');
 router.route('/')
   .post(async (req, res) => {
     const { login, password } = req.body;
-    console.log(req.body);
     const findAdmin = await Client.findOne({
       where: {
         login,
       },
     });
-    console.log(findAdmin);
     if (findAdmin) {
       const isCorrectPassword = await bcrypt.compare(password, findAdmin.password);
-      console.log(isCorrectPassword);
       if (!isCorrectPassword) {
-        console.log('Not correct');
-        // res.status(401).json({
-        //   message: 'Пароль введен неправильно!',
-        //   authUser: false,
-        // })
-        // return;
         res.json({
+          answer: true,
+          checked: true,
+          checkAdmin: true,
+          checkPass: false,
           message: 'Не верный пароль',
-          authUser: false,
         });
       } else {
         req.session.user = {
@@ -35,7 +29,6 @@ router.route('/')
           signedUp: true,
           isAdmin: true,
         };
-
         res.json({
           authClient: true,
           isAdmin: true,
@@ -43,8 +36,11 @@ router.route('/')
       }
     }
     res.json({
+      answer: true,
+      checked: true,
+      checkAdmin: false,
+      checkPass: false,
       message: 'Не верный пользователь',
-      authUser: false,
     });
   });
 

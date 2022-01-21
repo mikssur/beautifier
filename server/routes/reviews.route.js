@@ -9,14 +9,12 @@ route.get('/', (req, res) => {
 });
 
 route.post('/', (req, res) => {
-  console.log('SERRRVERRR', req.body);
   Rewiew.create(req.body.obj)
     .then((newReview) => res.status(201).json(newReview))
     .catch((error) => res.status(500).json(error));
 });
 
 route.delete('/:id', async (req, res) => {
-  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
   const { params } = req;
   const { id } = params;
   // Rewiew.destroy({ where: { id }, raw: true })
@@ -36,7 +34,6 @@ route.delete('/:id', async (req, res) => {
 });
 
 route.put('/:id', async (req, res) => {
-  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
   const { params } = req;
   const { id } = params;
   // Rewiew.destroy({ where: { id }, raw: true })
@@ -46,7 +43,6 @@ route.put('/:id', async (req, res) => {
   try {
     // eslint-disable-next-line no-unused-vars
     const changed = await Rewiew.update({ isValid: 'true' }, { where: { id }, raw: true });
-    console.log(changed, 'DAAAAA');
     return res.json({ changed: true, id });
   } catch (error) {
     console.error(error);
@@ -56,7 +52,6 @@ route.put('/:id', async (req, res) => {
 });
 
 route.put('/:name', async (req, res) => {
-  console.log('ID V ROUTE NA YDALENIJE PERED YDALENIJEM');
   const { params } = req;
   const { id } = req.body.obj;
   const { name } = params;
@@ -68,7 +63,6 @@ route.put('/:name', async (req, res) => {
   try {
     // eslint-disable-next-line no-unused-vars
     const changed = await Rewiew.update({ name, text, isValid: 'true' }, { where: { id }, raw: true });
-    console.log(changed, 'DAAAAA');
     return res.json({ changed });
   } catch (error) {
     console.error(error);

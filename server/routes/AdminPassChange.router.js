@@ -5,9 +5,9 @@ const { Client } = require('../db/models');
 router.route('/')
   .post(async (req, res) => {
     const {
-      oldPass, newPass,
+      oldPass, newPass, newPass2,
     } = req.body;
-
+    // console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++', req.body);
     const admin = await Client.findOne({
       where: {
         login: 'Admin',
@@ -15,6 +15,12 @@ router.route('/')
     });
     // console.log('=============== pass', oldPass, newPass);
     const isCorrectPassword = await bcrypt.compare(oldPass, admin.password);
+    if (newPass !== newPass2) {
+      res.json({
+        message: 'Введённые пароли не совпадают',
+      });
+      return;
+    }
 
     if (isCorrectPassword) {
       const hashPass = await bcrypt.hash(newPass, 8);
@@ -29,11 +35,18 @@ router.route('/')
           },
         },
       );
+      res.json({
+        message: 'Пароль успешно изменён',
+      });
+    } else {
+      res.json({
+        message: 'Неверный пароль',
+      });
     }
 
     // const reservations = await Reservation.findAll();
     // alert('pass change');
-    res.json(true);
+    // res.json(true);
   });
 
 module.exports = router;
