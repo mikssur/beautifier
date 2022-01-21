@@ -22,7 +22,7 @@ function ServiceList(props) {
   return (
     <div>
       <h2>{categoryname}</h2>
-      <ul>
+      <ul className="service-list">
         {services.length ? services.map((service) => <Service key={uuidv4()} service={service} />) : <li>No services</li>}
       </ul>
     </div>

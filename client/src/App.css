@@ -22,9 +22,24 @@ h2 {
   font-family: 'Russo One', sans-serif;
   font-weight: 100;
   font-size: 40px;
+  text-align: center;
 }
 
 h3 {
   font-family: 'Russo One', sans-serif;
   font-size: 25px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.no-reserv {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 200px 0;
 }

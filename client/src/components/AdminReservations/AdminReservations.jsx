@@ -57,7 +57,7 @@ function Reservations({id}) {
           <div>
             <p><strong>Имя</strong>: <input ref={clientNameInput} defaultValue={rightReservation.clientName} /></p>
             <p><strong>Номер телефона</strong>:  <input ref={numberInput} defaultValue={rightReservation.clientNumber} /></p>
-            <p><strong>Цена</strong>: {rightReservation.price}</p>
+            <p><strong>Цена</strong>:{rightReservation.price} </p>
             <p>Изменить услугу:</p>
           <select ref={serviceInput}>
             {services.map(el => <option key={el.id}>{el.name}, Цена: {el.price}</option>)}

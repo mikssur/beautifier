@@ -41,7 +41,7 @@ function Profile(props) {
               }
             })}
             <button id={el.id} onClick={(event) => deleteRes(event)}>Удалить запись</button></div></>
-        }) : <p>Записи отсутствуют! :(</p>
+        }) : <p className="no-reserv">Записи отсутствуют! :(</p>
       }     </div>
   );
 }

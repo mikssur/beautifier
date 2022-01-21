@@ -16,6 +16,7 @@
   padding: 10px 20px;
   margin: 20px;
   line-height: 30px;
+  transition: .2s;
 }
 
 .meet-link {
@@ -29,4 +30,8 @@
 
 .master-card img {
   width: 100%;
+}
+
+.master-card:hover {
+  transform: scale(110%);
 }
