@@ -39,6 +39,7 @@ function AdminReview(props) {
         <ul>
           {newReviews.length ? newReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <></>}
         </ul>
+          <h2>Новые отзывы</h2>
         <ul>
           {falseReviews.length ? falseReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <></>}
         </ul>

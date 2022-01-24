@@ -74,7 +74,7 @@ function ReservationForm() {
       <p>Ваше имя:</p>
       <input name='clientName' type="text" />
       <br />
-      <p>Ваше номер телефона:</p>
+      <p>Ваш номер телефона:</p>
       <input name='clientNumber' type="tel"
         placeholder="+79123456789" />
       <button type="submit">Записаться</button>

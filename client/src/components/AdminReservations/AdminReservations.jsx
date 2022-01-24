@@ -60,7 +60,7 @@ function Reservations({id}) {
             <p><strong>Цена</strong>:{rightReservation.price} </p>
             <p>Изменить услугу:</p>
           <select ref={serviceInput}>
-            {services.map(el => <option key={el.id}>{el.name}, Цена: {el.price}</option>)}
+            {services.map(el => <option key={el.id}>{el.name}</option>)}
           </select>
             <p>Изменить мастера:</p>
           <select ref={masterInput}>
