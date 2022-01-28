@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-// import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useDispatch } from 'react-redux';
 import Master from '../Master/Master';

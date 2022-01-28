@@ -1,8 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-//import { ADD_REVIEW } from '../../redux/actionTypes/reviewsAT/reviewsAT';
-
-// { setNewReview }
 import './Review.css';
 
 export function AddReviewForm() {
@@ -10,10 +7,6 @@ export function AddReviewForm() {
 
   const [name, setName] = useState('');
   const [text, setText] = useState('');
-
-  // const nameRef = useRef()
-  // const textRef = useRef()
-  // console.log('REFFFFFFIIII V ADD REVIEW COMPONENT', nameRef, textRef)
 
   function nameChange({ target: { value } }) {
     setName(value)
@@ -32,27 +25,6 @@ export function AddReviewForm() {
     setText('')
   }
 
-  // function addReview(event) {
-  //   event.preventDefault()
-
-  //   fetch('/reviews', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({
-  //       name: nameRef.current.value,
-  //       text: textRef.current.value,
-  //       isValid: false,
-  //     })
-  //   })
-  //   // setNewReview(false)
-  //   // setName('')
-  //   // setText('')
-  // }
-  // onChange={nameChange}
-  // onChange={textChange}
-
-
-  //onSubmit={addReview}
   return (
     <form onSubmit={addReviewFunc}>
       <input value={name} type="text" onChange={nameChange} name='clientReviewName' placeholder='Ваше имя' />

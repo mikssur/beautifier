@@ -13,15 +13,6 @@ function Category({ category }) {
   const id = category.id
   console.log(id, 'ETO IDIDIDIDIDIDIDIDIDIIDIDD')
 
-  // function getGettFetchServices(id) {
-  //   return {
-  //     type: 'GET_FETCH_SERVICES',
-  //     payload: {
-  //       id,
-  //     },
-  //   };
-  // }
-
   return (
     <div className="category">
       <Link to={`/categories/${categoryname}/${id}`}>
