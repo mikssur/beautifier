@@ -1,6 +1,5 @@
 import { mastersAT } from '../actionTypes/mastersAT';
 
-// const cats = ''
 const mastersInitialState = {
   masters: {},
   allMasters: []
@@ -13,7 +12,8 @@ const mastersReducer = (state = mastersInitialState, action) => {
       const masters = action.payload.masters
       console.log('!!!!!!!!!!!!MASTERS V REDJUSEREEE!!!!!!!!!!', masters)
       return { ...state, masters: masters };
-    case 'INIT_ALL_MASTERS':
+      
+    case mastersAT.INIT_ALL_MASTERS:
       return { ...state, allMasters: action.payload }
     default:
       return state

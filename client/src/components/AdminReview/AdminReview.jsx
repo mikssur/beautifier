@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { initReviewsAC } from '../../redux/actionCreators/reviewsAC/reviewsAC';
+import { initReviewsAC } from '../../redux/actionCreators/reviewsAC';
 import { Link } from 'react-router-dom';
 import ReviewCardDelete from './ReviewCardDelete';
 import './AdminReview.css';

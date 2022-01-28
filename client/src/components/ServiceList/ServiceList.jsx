@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { v4 as uuidv4 } from 'uuid';
-// // import { fetchCategoriesAC } from '../../redux/actionCreators/categoriesAC';
 import Service from '../Service/Service';
 import { useDispatch } from 'react-redux';
 
