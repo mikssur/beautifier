@@ -1,31 +1,27 @@
-import { INIT_REVIEWS } from '../actionTypes/reviewsAT/reviewsAT'
-import { DELETE_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
-import { ADD_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
-import { CHANGE_STATUS_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
-import { UPDATE_REVIEW } from '../actionTypes/reviewsAT/reviewsAT'
+import { reviewsAT } from '../actionTypes/reviewsAT'
 
 const initialState = { reviews: [] }
 
 export const reviewsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INIT_REVIEWS: {
+    case reviewsAT.INIT_REVIEWS: {
 
       return { ...state, reviews: action.payload.res }
     }
 
-     case DELETE_REVIEW: {
+    case reviewsAT.DELETE_REVIEW: {
       const id = action.payload.review.id
-      //const toDelete = state.reviews.find((el) => el.id === id)
-      //const newReviews = [...state.reviews.splice(state.reviews.indexOf(toDelete), 1)]
       const newReviews = state.reviews.filter((el) => el.id != id )
 
       return { ...state, reviews: newReviews }
     }
-    case ADD_REVIEW: {
+
+    case reviewsAT.ADD_REVIEW: {
       const review = action.payload.review
       return { ...state, reviews: [...state.reviews, review] }
     }
-    case CHANGE_STATUS_REVIEW: {
+
+    case reviewsAT.CHANGE_STATUS_REVIEW: {
       const id = action.payload.review.id
       console.log('()%%$##@^&*()_()*(*&%$%', id)
 
@@ -40,7 +36,7 @@ export const reviewsReducer = (state = initialState, action) => {
       return { ...state, reviews: changedReviews }
     }
 
-    case UPDATE_REVIEW: {
+    case reviewsAT.UPDATE_REVIEW: {
       const review = action.payload.review
       console.log('()%%$##@^&*()_()*(*&%$%', review)
 

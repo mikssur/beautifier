@@ -1,8 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { getFetchMastersAC } from '../../redux/actionCreators/mastersAC';
-
 import './Service.css';
 
 function Service({ service }) {
