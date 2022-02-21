@@ -53,7 +53,6 @@ const fetchAddReview = async ({ obj }) => {
     })
   })
   const review = await response.json()
-  // const id = review.id
   return review
 }
 
@@ -68,13 +67,10 @@ const fetchApproveReview = async ({ id }) => {
   })
 
   const review = await response.json()
-  // const id = review.id
   return review
 }
 
 const fetchEditReview = async ({ obj }) => {
-  // const name = obj.name
-  //const id = obj.id
 
   const response = await fetch(`/editreview`, {
     method: 'PUT',
@@ -84,25 +80,16 @@ const fetchEditReview = async ({ obj }) => {
     })
   })
   const review = await response.json()
-  // const id = review.id
   return review
 }
 
 
 function* getFetchCategories() {
-  // try {
   const categories = yield call(fetchCategories);
   yield put({ type: "INIT_CATEGORIES", payload: categories });
-  // } 
-  // catch (e) {
-
-  //   yield put({ type: "USER_FETCH_FAILED", message: e.message });
-  // }
 }
 
 function* getFetchServices(action) {
-  //const id = getFetchServices.payload
-
   const services = yield call(fetchServices, { id: action.payload.id })
   yield put({ type: "INIT_SERVICES", payload: { services } })
 }
@@ -131,11 +118,9 @@ function* getEditFetchReview(action) {
   const review = yield call(fetchEditReview, { obj: action.payload })
   yield put({ type: 'UPDATE_REVIEW', payload: { review } })
 }
-// // наблюдатель (watcher) типа действия + какой исполнитель будет работать
 export function* mySaga() {
   yield takeEvery('GET_FETCH_CATEGORIES', getFetchCategories);
   yield takeEvery('GET_FETCH_SERVICES', getFetchServices);
-  //   //   //yield takeEvery("GET_FETCH_SERVICES", getFetchServices);
   yield takeEvery("GET_FETCH_MASTERS", getFetchMasters);
   yield takeEvery("DELETE_FETCH_REVIEW", deleteFetchReview);
   yield takeEvery("ADD_FETCH_REVIEW", addFetchReview);

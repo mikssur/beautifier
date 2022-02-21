@@ -14,7 +14,6 @@ function AdminReview(props) {
   const newReviews = reviews.filter((el) => el.isValid != false)
   const falseReviews = reviews.filter((el) => el.isValid == false)
 
-
   useEffect(() => {
     (async () => {
       const response = await fetch(`/reviews`)
@@ -22,7 +21,6 @@ function AdminReview(props) {
       dispatch(initReviewsAC({ res }))
     })();
   }, [dispatch])
-
 
   return (
     <div className="admin-reviews-block">
@@ -44,7 +42,6 @@ function AdminReview(props) {
           {falseReviews.length ? falseReviews.map(review => <ReviewCardDelete key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />) : <></>}
         </ul>
       </div>
-      {/* {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>} */}
       </> :
       <div>Страница не найдена</div>
       }

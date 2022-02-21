@@ -12,9 +12,3 @@ export const gettFetchServicesAC = (payload) => {
     payload
   }
 }
-// export const fetchChooseServiceAC = (payload) => {
-//   return {
-//     type: servicesAT.GET_FETCH_CHOOSE_SERVICE,
-//     payload
-//   }
-// }

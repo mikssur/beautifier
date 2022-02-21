@@ -4,22 +4,9 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Master extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate({ Service, masterService, Reservation }) {
-      // this.hasMany(Service, {
-      //   foreignKey: {
-      //     type: DataTypes.Integer,
-      //     allowNull: false,
-      //   },
-      // });
-      // this.belongsTo(Service);
       this.belongsToMany(Service, { foreignKey: 'serviceId', otherKey: 'masterId', through: masterService });
       this.belongsToMany(Service, { foreignKey: 'serviceId', otherKey: 'masterId', through: Reservation });
-      // define association here
     }
   }
 

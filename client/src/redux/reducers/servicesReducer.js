@@ -1,6 +1,5 @@
 import { servicesAT } from '../actionTypes/servicesAT';
 
-// const cats = ''
 const servicesInitialState = {
   services: {}
 }

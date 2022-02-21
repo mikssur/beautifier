@@ -23,7 +23,6 @@ export const reviewsReducer = (state = initialState, action) => {
 
     case reviewsAT.CHANGE_STATUS_REVIEW: {
       const id = action.payload.review.id
-      console.log('()%%$##@^&*()_()*(*&%$%', id)
 
       const changedReviews = state.reviews.map((el) => {
         if(el.id == id) {

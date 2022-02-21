@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-
 function Modal(props) {
-  // return(
-  //   <div>hey</div>
-  // )
+  
   const name1 = props.name
   const text1 = props.text
   const id = props.id

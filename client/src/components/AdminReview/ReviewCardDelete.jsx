@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Modal from './Modal';
 
 function ReviewCardDelete({ name, text, isValid, id }) {
   const dispatch = useDispatch()
   const reviewId = id
-  const currentURL = window.location.href
-  //const urll = currentURL.split().splice(0, 22)
   const [ modal, setModal ] = useState(false)
   return (
     <>
