@@ -5,10 +5,7 @@ route.put('/', async (req, res) => {
   const { id } = req.body.obj;
   const { name } = req.body.obj;
   const { text } = req.body.obj;
-  // Rewiew.destroy({ where: { id }, raw: true })
-  //   .then((delReview) => res.status(201).json({ delReview, id }))
-  //   .catch((error) => res.status(500).json(error));
-  // // return res.json({ deleted: true }) POCHEMY V ETOJ STROKE ???
+
   try {
     // eslint-disable-next-line no-unused-vars
     const changed = await Rewiew.update({ name, text, isValid: 'true' }, { where: { id }, raw: true });

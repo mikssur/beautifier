@@ -1,7 +1,6 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const Filestore = require('session-file-store')(session);
 
@@ -10,8 +9,6 @@ const cors = require('cors');
 const app = express();
 
 const PORT = process.env.PORT ?? 3001;
-
-const testRoute = require('./routes/test.route');
 
 const reviewsRoute = require('./routes/reviews.route');
 const categoriesRoute = require('./routes/categories.route');

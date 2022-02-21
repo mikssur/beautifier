@@ -20,7 +20,6 @@ function Profile(props) {
       })
     })
     const reservations = await response.json()
-    // window.location.href = '/profile';
     dispatch({ type: 'DELETE_RESERVATION', payload: reservationId })
   }
   return (

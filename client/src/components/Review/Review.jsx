@@ -10,7 +10,6 @@ import './Review.css';
 
 function Review(props) {
 
-  // const [newReview, setNewReview] = useState(false);
   const [newDate, setNewDate] = useState('')
 
   const dispatch = useDispatch()
@@ -26,14 +25,6 @@ function Review(props) {
     })();
   }, [dispatch])
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await fetch(`/reviews`)
-  //     const res = await response.json();
-  //     dispatch(initReviewsAC({ res }))
-  //   })();
-  // }, [newReview])
-
   return (
     <div className="review-block">
       <h2>Отзывы</h2>
@@ -41,7 +32,6 @@ function Review(props) {
         {newReviews.map(review => <ReviewCard key={review.id} name={review.name} text={review.text} id={review.id} isValid={review.isValid} />)}
       </div>
       <AddReviewForm />
-      {/* {newReview ? <AddReviewForm setNewReview={setNewReview} /> : <button onClick={() => setNewReview(true)}>Оставить отзыв</button>} */}
     </div>
   );
 }

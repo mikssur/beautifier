@@ -1,4 +1,3 @@
-//import { servicesAT } from '../actionTypes/servicesAT'
 import { categoriesAT } from '../actionTypes/categoriesAT'
 
 export const categoriesInitAC = (payload) => {
@@ -7,12 +6,7 @@ export const categoriesInitAC = (payload) => {
     payload
   }
 }
-// export const fetchServicesAC = (payload) => {
-//   return {
-//     type: servicesAT.GET_FETCH_SERVICES,
-//     payload
-//   }
-// }
+
 export const getFetchCategoriesAC = (payload) => {
   return {
     type: categoriesAT.GET_FETCH_CATEGORIES,

@@ -8,7 +8,7 @@ function Service({ service }) {
   const servicename = service.name
   const id = service.id
   const picture = service.picture
-  const currentURL = window.location.pathname
+  
   return (
     <div className="service-card">
       <Link to={`/categories/:categoryname/${servicename}/${id}`}>
